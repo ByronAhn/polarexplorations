@@ -1,0 +1,36 @@
+\PassOptionsToPackage{usenames, dvipsnames}{xcolor}
+\documentclass[tikz, 10pt]{standalone}
+\usepackage{fontspec}
+  \defaultfontfeatures{Ligatures={NoCommon, NoDiscretionary, NoHistoric, NoRequired, NoContextual}, Mapping=tex-text}
+  \setmainfont{Times New Roman}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{relsize}
+\usepackage{tikz, tikz-qtree}
+	\usetikzlibrary{shapes, arrows, backgrounds, fit, positioning}
+
+\begin{document}
+  \begin{tikzpicture}[node distance=4em, anchor=west, align=flush center, FLOW/.style={->, very thick}, LABEL/.style={draw, fill=yellow!80, inner sep=.75em}, scale = 2, transform shape]
+  	\node{\includegraphics[width=25em]{Ranges-out_of_order-ranges-2RangeIntervals.png}};
+    \draw [black, fill=violet!30, opacity=.5] (1, 0.35) rectangle (3.07, 0.67);
+    \draw [black, fill=blue!30, opacity=.5] (1, 0.67) rectangle (3.07, 0.99);
+    \draw [black, fill=green!30, opacity=.5] (1, 0.99) rectangle (3.07, 1.31);
+    \draw [black, fill=yellow!30, opacity=.5] (1, 1.31) rectangle (3.07, 1.63);
+    \draw [black, fill=red!30, opacity=.5] (1, 1.63) rectangle (3.07, 1.95);
+	\draw[red, opacity=.35] (2.065, -1.2) -- (2.065, 1.95);
+	\draw[red, opacity=.35] (3.01, -1.2) -- (3.01, 1.95);
+%
+    \draw [black, fill=violet!30, opacity=.5] (3.07, 0.35) rectangle (8, 0.46);
+    \draw [black, fill=blue!30, opacity=.5] (3.07, 0.46) rectangle (8, 0.57);
+    \draw [black, fill=green!30, opacity=.5] (3.07, 0.57) rectangle (8, .68);
+    \draw [black, fill=yellow!30, opacity=.5] (3.07, .68) rectangle (8, .79);
+    \draw [black, fill=red!30, opacity=.5] (3.07, .79) rectangle (8, .9);
+	\draw[red, opacity=.35] (4.1, -1.2) -- (4.1, 1.95);
+	\draw[red, opacity=.35] (4.73, -1.2) -- (4.73, 1.95);
+	\draw[red, opacity=.35] (5.47, -1.2) -- (5.47, 1.95);
+	\draw[red, opacity=.35] (6.3, -1.2) -- (6.3, 1.95);
+	\draw[red, opacity=.35] (7.36, -1.2) -- (7.36, 1.95);
+	\draw[red, opacity=.35] (7.76, -1.2) -- (7.76, 1.95);
+%	\draw[step=.25, black] (2, 0) grid (8, 3);
+  \end{tikzpicture}
+\end{document}

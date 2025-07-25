@@ -1,0 +1,33 @@
+  \begin{tikzpicture}[node distance=4em, anchor=west, align=flush center, FLOW/.style={->, very thick}, LABEL/.style={draw, fill=yellow!80, inner sep=.75em}, scale = .625, transform shape]
+    \node[draw, text width=6em,anchor=east] (node0) {Is the labeller certain that there should be a Point object here?};
+    \node (node1) [right=5em of node0] {};
+    \node (node1up) [above=1em of node1] {};
+    \node (node1down) [LABEL, below=1em of node1] {\textlabel{?}};
+    \node[draw, text width=5.5em, right=5em of node1] (node2) {Assert a relationship to a PrStr object?};
+    \node[LABEL, below right=1em and 6em of node2.east] (node3no) {\textlabel{0}};
+    \node[LABEL, above right=1em and 6em of node2.east] (node3yes) {\textlabel{*}\\\textlabel{]}\\\textlabel{[}};
+    \node[draw, text width=8em, right=3em of node3yes] (node4) {Where is the PrStr Tier object that corresponds to the Points Tier object?};
+    \node[LABEL, right=3em of node4.east] (node5) {\textlabel{>}\\\textlabel{<}\\\textlabel{@}};
+    \node[draw, text width=8em, below=5.5em of node5, anchor=north] (node6) {Could this Points Tier object also correspond to another PrStr object?};
+    \node[right=3em of node6] (node7yes) {};
+    \node[LABEL, above=of node7yes.center] (node7) {\textlabel{/}};
+    \node[above=9em of node7] (node7-loopback1) {};
+    \node[above=2em of node3yes] (node7-loopback2) {};
+    \node[draw, text width=10em, below=2em of node3no] (node8) {Does the labeller want to directly annotate a value for the pitch (in Hz) for this Point?};
+    \node[LABEL, text width=8em, left=of node8] (node9) {\textlabel{,}<\textit{value in Hz}>};
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+    \draw [black,FLOW] (node0.east) -- node[pos=0.5,below, sloped]{No} (node1down.west);
+    \draw [black,FLOW] (node1down.east) -- (node2.west);
+    \draw [black,FLOW] (node0.east) -- node[pos=0.5, above, sloped]{Yes} (node2.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{Yes} (node3yes.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{No} (node3no.west);
+    \draw [black,FLOW] (node3yes.east) -- (node4.west);
+    \draw [black,FLOW] (node4.east) -- (node5.west);
+    \draw [black,FLOW] (node3no.south) -- (node8.north);
+    \draw [black,FLOW] (node5.south) -- (node6.north);
+    \draw [black,FLOW] (node6.west) -- node[pos=0.5, above, sloped]{No} (node8.east);
+    \draw [black,FLOW] (node6.east) -- node[pos=0.5, above, sloped]{Yes} (node7yes.center) -- (node7.south);
+    \draw [black,FLOW] (node7.north) --  (node7-loopback1.center) -- (node7-loopback2.center) -- (node3yes);
+    \draw [black,FLOW] (node8.west) -- node[pos=0.5, above, sloped]{Yes} (node9.east);
+  \end{tikzpicture}

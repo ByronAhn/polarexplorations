@@ -1,0 +1,29 @@
+\PassOptionsToPackage{usenames,dvipsnames}{xcolor}
+\documentclass[14pt]{standalone}
+\usepackage{fontspec}
+\usepackage{etex}
+\usepackage{relsize}
+\usepackage{graphicx}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[Ligatures={NoCommon, NoDiscretionary, NoHistoric, NoRequired, NoContextual}, Mapping=tex-text]{Cambria}
+\usepackage{tikz,tikz-qtree}
+	\usetikzlibrary{fit,backgrounds,positioning,arrows,shapes}
+	\usetikzlibrary{decorations.pathreplacing}
+    \tikzset{every leaf node/.style={font=\bfseries}}
+\usepackage{ulem,soul}
+\usepackage{array, multirow, arydshln}
+\usepackage{xcolor}
+	\definecolor{CB1}{RGB}{0,114,178}%BLUE
+	\definecolor{CB2}{RGB}{213,94,0}%VERMILLION
+	\definecolor{CB3}{RGB}{0,158,115}%BLUE GREEN
+	\definecolor{CB4}{RGB}{204,121,167}%REDDISH PURPLE
+	\definecolor{CB5}{RGB}{86,180,233}%SKY BLUE
+	\definecolor{CB6}{RGB}{230,159,0}%ORANGE
+	\definecolor{CB7}{RGB}{240,228,66}%YELLOW
+	\def\CB#1#2{\textcolor{CB#1}{#2}}
+
+\frenchspacing
+
+\begin{document}
+\input{Usages-HHLL-sagging.tex}
+\end{document}

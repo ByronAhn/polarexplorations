@@ -1,0 +1,19 @@
+  \begin{tikzpicture}[node distance=4em, anchor=west, align=flush center, FLOW/.style={->, very thick}, LABEL/.style={draw, fill=yellow!80, inner sep=.75em}, scale = .775, transform shape]
+    \node[draw, text width=5.5em] (node2) {Assert a relationship to a PrStr object?};
+    \node[LABEL, below right=1em and 6em of node2.east] (node3no) {\textlabel{0}};
+    \node[LABEL, above right=1em and 6em of node2.east] (node3yes) {\textlabel{*}\\\textlabel{]}\\\textlabel{[}};
+    \node[draw, text width=8em, right=3em of node3yes] (node4) {Where is the PrStr Tier label that corresponds to the Points Tier label?};
+    \node[LABEL, right=3em of node4.east] (node5) {\textlabel{>}\\\textlabel{<}\\\textlabel{@}};
+    \node[below=2.15em of node5.south] (belownode5) {\strut};
+    \node[draw, text width=8em, right=3em of node5.east, anchor=west] (node6) {Does the labeller want to directly annotate a value for the pitch (in Hz) for this Point?};
+    \node[LABEL, text width=8em, below=3em of node6] (node9) {\textlabel{,}<\textit{value in Hz}>};
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{Yes} (node3yes.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{No} (node3no.west);
+    \draw [black,FLOW] (node3yes.east) -- (node4.west);
+    \draw [black,FLOW] (node4.east) -- (node5.west);
+    \draw [black,FLOW] (node5.east) -- (node6.west);
+    \draw [black,FLOW] (node6.south) -- node[pos=0.5, right]{Yes} (node9.north);
+    \draw [black,FLOW] (node3no.east) -- (belownode5.center) -- (node6.185);
+  \end{tikzpicture}

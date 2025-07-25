@@ -1,0 +1,22 @@
+  \begin{tikzpicture}[node distance=4em, anchor=west, align=flush center, FLOW/.style={->, very thick}, LABEL/.style={draw, fill=yellow!80, inner sep=.75em}, scale = .775, transform shape]
+    \node[draw, text width=5.5em] (node2) {Assert a relationship to a PrStr object?};
+    \node[LABEL, below right=1em and 6em of node2.east] (node3no) {\textlabel{0}};
+    \node[LABEL, above right=1em and 6em of node2.east] (node3yes) {\textlabel{*}\\\textlabel{]}\\\textlabel{[}};
+    \node[draw, text width=8em, right=3em of node3yes] (node4) {Where is the PrStr Tier object that corresponds to the Points Tier object?};
+    \node[LABEL, right=3em of node4.east] (node5) {\textlabel{>}\\\textlabel{<}\\\textlabel{@}};
+    \node[draw, text width=8em, below=1.5em of node5, anchor=north] (node6) {Could this Points Tier object also correspond to another PrStr object?};
+    \node[right=3em of node6] (node7yes) {};
+    \node[LABEL, above=of node7yes.center] (node7) {\textlabel{/}};
+    \node[above=5em of node7] (node7-loopback1) {};
+    \node[above=2em of node3yes] (node7-loopback2) {};
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{Yes} (node3yes.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{No} (node3no.west);
+    \draw [black,FLOW] (node3yes.east) -- (node4.west);
+    \draw [black,FLOW] (node4.east) -- (node5.west);
+    \draw [black,FLOW] (node5.south) -- (node6.north);
+    \draw [black,FLOW] (node6.east) -- node[pos=0.5, above, sloped]{Yes} (node7yes.center) -- (node7.south);
+    \draw [black,FLOW] (node7.north) --  (node7-loopback1.center) -- (node7-loopback2.center) -- (node3yes);
+
+  \end{tikzpicture}

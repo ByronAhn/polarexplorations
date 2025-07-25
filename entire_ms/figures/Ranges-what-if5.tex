@@ -1,0 +1,42 @@
+\tikzset{
+    dots/.style={
+        line width=4pt,
+        line cap=round,
+        dash pattern=on 0pt off 6pt
+    }
+}
+\begin{tikzpicture}[scale=1.25]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if5.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+%	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {2,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\begin{scope}
+\draw (0,4.25) rectangle (7.75,1.75);
+\draw (0,1.75) rectangle (7.75,1.25);
+\node at (3.875, 1.5) {\relsize{-2}220-350};
+\coordinate (pt1) at (0.2,2.5);
+\coordinate (pt2) at (.7,3.4);
+\coordinate (pt3) at (1.4,2.35);
+\coordinate (pt4) at (2,2.75);
+\coordinate (pt5) at (2.35,2.25);
+\coordinate (pt6) at (2.75,2.22);
+\coordinate (pt7) at (5.3,2.25);
+\coordinate (pt8) at (6.4,2.25);
+\coordinate (pt9) at (7.45,2.2);
+%\foreach \x in {1,...,9}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt1) sin (pt2) cos ([xshift=-7,yshift=10]pt3) sin (pt3) cos ([xshift=7,yshift=5]pt3) sin  (pt4) cos ([xshift=-5,yshift=7]pt5) sin (pt5) -- (pt6);
+\draw[CB1, dots] (pt7) .. controls (pt8) .. (pt9);
+\end{scope}
+\end{tikzpicture}
