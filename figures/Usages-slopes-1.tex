@@ -1,0 +1,42 @@
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if5.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {1,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\begin{scope}
+\draw (0,4.25) rectangle (7.75,.5);
+\draw (0,0) rectangle (7.75,.5);
+\node at (3.875, .25) {\relsize{-2}100-400};
+\coordinate (pt0) at (0.2,1.5);
+\coordinate (pt1) at (1.2,1.85);
+\coordinate (pt2) at (1.7,3.0);
+\coordinate (pt3) at (2.4,1.45);
+\coordinate (pt4) at (3,1.15);
+\coordinate (pt5) at (6,1.05);
+\coordinate (pt6) at (7,3.95);
+%\coordinate (pt7) at (5.3,2.25);
+%\coordinate (pt8) at (6.4,2.25);
+%\coordinate (pt9) at (7.45,2.2);
+%\foreach \x in {1,...,9}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt0) cos (pt1) sin (pt2) cos (pt3) sin  (pt4) cos (pt5) cos (pt6);
+%\draw[CB1, dots] (pt7) .. controls (pt8) .. (pt9);
+\end{scope}
+\begin{scope}[style={font=\relsize{-1}}]
+\draw[red, fill = red, fill opacity = .35] (6,.95) rectangle (7.1,4.05);
+\node [red, anchor=north] at (6.5, .95) {250ms};
+\node [red, rotate = 90, anchor=north] at (7.1, 2.5) {300Hz};
+\end{scope}
+%\begin{scope}[very thick, red]
+%\draw [decorate, decoration = {brace, mirror}] (6,.85) --  (7,.85);	
+%\end{scope}

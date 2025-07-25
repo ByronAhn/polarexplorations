@@ -1,0 +1,255 @@
+%This monograph lays out an extensive set of guidelines that define the PoLaR framework for prosodic labelling, whose name is based on Points, Levels, and Ranges. The aim of this system is to provide a means of annotating the core components of prosody (especially with respect to intonation) on separate tiers. This includes information such as pitch turning points, pitch ranges, prominence and phrases. A hallmark of PoLaR is that these features can be annotated  separately from one another and systematically, in a way that is not offered by other popular systems of intonational annotation; at the same time, PoLaR also provides advanced labellers with optional labels that can annotate analyses of how these features are related to one another. PoLaR's shallow learning curve, its flexibility, and its extensibility make PoLaR useful and accessible to a wide variety of researchers, from a wide variety of backgrounds, working on a wide variety of languages and varieties.
+%
+%The structure of this monograph is as follows. After providing background context for PoLaR in Chapter 1, Chapters 2 and 3 comprise the annotation guidelines. After the official guidelines, we discuss details about how PoLaR has been explicitly designed to be customized or expanded upon (Chapter 4), as well as some usage cases for PoLaR and some of its advantages (Chapter 5).
+
+\documentclass[11pt, twoside]{memoir}
+
+\setsecnumdepth{subsubsection}
+\settocdepth{subsubsection}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{fontspec}
+	\setmainfont%
+		[Mapping=tex-text]
+	{Cambria}
+	\setsansfont%
+%	[Ligatures={NoCommon, NoDiscretionary},%
+		[Mapping=tex-text]%
+		{Inconsolata}
+\usepackage{relsize}
+
+\def\textlabel#1{{\relsize{-.5}\fontspec[Mapping=tex-text]{Roboto Mono}{#1}}}
+\def\langtext#1{\textit{#1}}
+
+\usepackage{float}
+
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+
+\usepackage{xcolor}
+
+\usepackage{hyperref}
+
+\renewcommand\cftappendixname{\appendixname~}
+\usepackage[nonumberlist, nopostdot, section=chapter, numberedsection=autolabel]{glossaries}
+\makeglossaries
+
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, backgrounds, fit, positioning}
+\usetikzlibrary{decorations.pathreplacing}
+\tikzset{
+    dots/.style={
+        line width=4pt,
+        line cap=round,
+        dash pattern=on 0pt off 6pt
+    }
+}
+\usepackage{colortbl}
+	\definecolor{CB1}{RGB}{0, 114, 178}%BLUE
+	\definecolor{CB2}{RGB}{213, 94, 0}%VERMILLION
+	\definecolor{CB3}{RGB}{0, 158, 115}%BLUE GREEN
+	\definecolor{CB4}{RGB}{204, 121, 167}%REDDISH PURPLE
+	\definecolor{CB5}{RGB}{86, 180, 233}%SKY BLUE
+	\definecolor{CB6}{RGB}{230, 159, 0}%ORANGE
+	\definecolor{CB7}{RGB}{240, 228, 66}%YELLOW
+	\def\CB#1#2{\textcolor{CB#1}{#2}}
+\usepackage{booktabs, longtable, array, arydshln, multirow}
+\usepackage{caption}
+\newlength\defaultaboverulesep
+\setlength\defaultaboverulesep{\aboverulesep}
+\newlength\defaultbelowrulesep
+\setlength\defaultbelowrulesep{\belowrulesep}
+\setlength\aboverulesep{0pt}
+\setlength\belowrulesep{0pt}
+\def\arraystretch{1.15}
+
+\usepackage[framemethod=tikz]{mdframed}
+	\newmdenv[middlelinecolor=CB1,
+		middlelinewidth=1pt,
+		backgroundcolor=gray!50,
+		roundcorner=4pt]{infobox}
+	\newmdenv[middlelinecolor=CB2,
+		middlelinewidth=2pt,
+		backgroundcolor=CB2!30,
+		roundcorner=4pt]{toexpand}
+
+\usepackage{makeidx}
+\usepackage{graphicx}
+	\graphicspath{{figures}}
+
+\usepackage{expex}
+
+\usepackage{enumitem}
+	\setitemize{itemsep=.5ex, topsep=1ex, parsep=0pt, partopsep=0pt, leftmargin=3em, rightmargin=0ex}
+	\setenumerate{itemsep=.5ex, topsep=1ex, parsep=0pt, partopsep=0pt, leftmargin=3em, rightmargin=0em}
+\usepackage[hang, flushmargin, multiple, bottom, stable]{footmisc}
+
+\usepackage{fancyhdr}
+
+\usepackage{natbib}
+	\bibpunct[:]{(}{)}{,}{a}{}{,}
+	\setlength{\bibsep}{1ex plus 0.3ex}
+\renewcommand{\bibsection}{\part*{Bibliography}}
+
+\usepackage{cite-ref-errors}
+
+\setlength\parskip{.5\baselineskip}
+\setlength\parindent{0pt}
+\frenchspacing
+\raggedbottom
+
+\def\THIStitle{Embarking on PoLaR Explorations}
+\def\THISsubtitle{A Framework for Intonational Annotation and Analysis}
+\pagestyle{fancy}
+	\fancyhead[LO]{\textit{\THIStitle}}
+	\fancyhead[RO]{}
+	\fancyhead[LE]{}
+	\fancyhead[RE]{Ahn, Veilleux, Shattuck-Hufnagel, Brugos}
+\pagestyle{plain}
+\hypersetup{
+	breaklinks=true,
+	pdfauthor={Byron Ahn, Nanette Veilleux, Stefanie Shattuck-Hufnagel, and Alejna Brugos},
+	pdftitle={\THIStitle: \THISsubtitle},
+	bookmarks,
+	bookmarksopen=true,
+	colorlinks=false,
+	allcolors=blue
+}
+
+\makeindex
+
+\begin{document}
+\frontmatter
+\captionsetup{margin=1.5cm, skip=4pt, labelfont={bf, footnotesize}, textfont={footnotesize}}
+
+\title{\THIStitle}
+\author{Byron Ahn \and Nanette Veilleux \and Stefanie Shattuck-Hufnagel \and Alejna Brugos}
+\date{\today}
+%{\normalsize\textcolor{red}{These guidelines are still under active development.\\Find the latest version of the guidelines, as well as .wav files, .TextGrid files, and some scripts, at \url{https://www.polarlabels.com/}.}}
+
+\begin{titlingpage}
+\vspace*{\fill}
+\begin{center}
+\textbf{\huge{\THIStitle:\strut}}\\
+\textbf{\huge{\THISsubtitle\strut}}
+\\[6\baselineskip]
+{\large{Byron Ahn,\strut\\Nanette Veilleux,\strut\\Stefanie Shattuck-Hufnagel,\strut\\and Alejna Brugos\strut}}\\[6\baselineskip]
+{\large\textit{draft}}\\
+November 2022
+\end{center}
+\vspace*{\fill}
+\end{titlingpage}
+
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+\newpage
+
+\mainmatter
+
+\section*{Introduction}\label{sec:introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+\setcounter{footnote}{0}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+This monograph lays out an extensive set of guidelines that define the \textbf{PoLaR} framework for prosodic labelling, which is based on \textbf{Po}ints, \textbf{L}evels, \textbf{a}nd \textbf{R}anges.  The aim of this system is to provide a means of annotating (both \uline{separately} and \uline{more explicitly}) information such as f0 scaling and alignment, that is already taken into account by labellers using other intonational annotation systems, but in less explicit ways.
+
+Before later chapters lay out the details of PoLaR, Chapter \ref{ch:background} provides some background on prosody, prosodic annotation, and the motivation for developing this framework. Here a reader can find a sketch of the basic properties of PoLaR —describing the fundamentals of the system and how it fosters the explicit labelling of both phonetic and phonological aspects of the prosody of an utterance.  These are transcribed on a number of different tiers, while relationships between these two types of labels can still be annotated. Chapter \ref{ch:background} also provides some motivating context, and ends with an overview of some advantages of PoLaR labelling. The reader who is primarily interested in learning how to label with PoLaR can skip ahead to Chapter \ref{ch:basics} (for PoLaR Basic labels) and Chapter \ref{ch:advanced} (for PoLaR Advanced labels), which serve as the annotation guidelines, i.e. as a tutorial on how to label using PoLaR.\footnote{Note: The guidelines found in this monograph are for version 1.0 of PoLaR annotation (\citealt{ahn-21}). Any developments beyond version 1.0 will be available through the PoLaR repository: \href{https://doi.org/10.17605/OSF.IO/USBX5}{https://doi.org/10.17605/OSF.IO/USBX5}.}
+
+After the official guidelines, Chapter \ref{ch:beyond} discusses ways in which PoLaR labelling is explicitly designed to be customized or expanded upon. This is followed by the final content chapter of this monograph, Chapter \ref{ch:advantages}, which contains a discussion of some of usage cases for PoLaR, as well as its practical and theoretical advantages. Chapter \ref{ch:practical} concludes the monograph with a reference guide to PoLaR, which is followed by published references and appendices.
+
+\renewcommand*{\thefootnote}{\arabic{footnote}}
+
+\include{chapters/ch1-new}  %background
+\include{chapters/ch2}  %getting started
+\include{chapters/ch3}  %advanced
+\include{chapters/ch4}  %beyond
+\include{chapters/ch5}  %usage
+\include{chapters/ch6}  %practical guide
+\include{chapters/ch7}  %conclusions
+
+\appendix
+\include{chapters/ch8}  %quick ref
+
+
+%%\chapter*{Glossary}
+%
+%\newglossaryentry{contour}
+%{
+%  name=contour,
+%  description={\textit{see entries for ‘f0 contour’, ‘intonational contour’, and ‘prosodic contour’}}
+%}
+%
+%\newglossaryentry{f0contour}
+%{
+%  name=f0 contour,
+%  description={a description of changes in the f0 values in an utterance over time}
+%%  ,
+%%  parent=contour
+%}
+%
+%\newglossaryentry{pitchcontour}
+%{
+%  name=pitch contour,
+%  description={a description of changes in pitch over time (\textit{represents events in a listener’s mind})}
+%%  ,
+%%  parent=contour
+%}
+%
+%\newglossaryentry{intonationalcontour}
+%{
+%  name=intonational contour,
+%  description={an abstract sequence of pitch events over time (\textit{requires a grammar})}
+%%  ,
+%%  parent=contour
+%}
+%
+%\newglossaryentry{fundamental frequency}
+%{
+%  name=fundamental frequency,
+%  description={\textit{see entry for ‘f0’}}
+%}
+%
+%\newglossaryentry{f0}
+%{
+%  name=f0,
+%  description={fundamental frequency; a physical measure directly related to rate of vibration of the vocal folds, as reflected in the acoustic signal or articulatory measures}
+%}
+%\newglossaryentry{pitch}
+%{
+%  name=pitch,
+%  description={an abstract psycho-perceptual phenomenon related to f0 (\textit{requires a listener with a mind})}
+%}
+%\newglossaryentry{intonation}
+%{
+%  name=intonation,
+%  description={the arm of phonetics\slash phonology dealing with pitch patterns}
+%}
+%\newglossaryentry{prosody}
+%{
+%  name=prosody,
+%  description={the arm of phonetics\slash phonology dealing with suprasegmental patterns, broadly speaking}
+%}
+%%\newglossaryentry{microprosody}
+%%{
+%%  name=microprosody,
+%%  description={XXXX}
+%%}
+%
+%
+%%\textbf{[ COMING SOON ]}
+%
+%\glsaddall
+%\glossarystyle{index}
+%\printglossary[type=main]
+%
+%
+%\newpage
+%\printindex
+
+\bibliographystyle{glossa.bst}
+\bibliography{localbibliography.bib}
+
+\end{document}	

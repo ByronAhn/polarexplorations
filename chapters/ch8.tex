@@ -1,0 +1,181 @@
+\chapter{Quick Reference to PoLaR Labels}\label{sec:polar-quick-reference-to-labels}
+
+This appendix serves as a quick-access reference guide, for use while labelling. It provides tables for all Basic PoLaR labels for each tier, as well as the Advanced PoLaR labels. In addition to these tables, some finite state grammar diagrams for the Points Tier labels follow.
+
+
+\section*{Basic Labels}
+
+\subsection*{Prosodic Structure (PrStr): a point tier}
+\begin{longtable}{clp{.525\linewidth}} \toprule \textbf{Label} & \textbf{Phonological Object} & \textbf{Label is time-aligned with \_\_\_\_\_}\tabularnewline
+\midrule \endhead
+\textlabel{*} & Prominence & A syllable that has intonational prominence \tabularnewline
+\textlabel{?*} & Possible Prominence & A syllable that might have intonational prominence \tabularnewline
+\textlabel{]} & Phrase’s Right Edge & The right edge of the final word of a phrase \tabularnewline
+\textlabel{?]} & Possible Phrase’s Right Edge & What might be the right edge of the final word of a phrase \tabularnewline
+\bottomrule 
+\caption{The Basic labels for the Prosodic Structure tier (for English).%
+}
+\end{longtable}
+
+\subsection*{Pitch Points: a point tier}
+\begin{longtable}{cp{.8\linewidth}} \toprule \textbf{Label} & \textbf{Meaning} \tabularnewline
+\midrule \endhead
+\textlabel{0} & A turning point in the f0 contour (where line segments meet in a straight-line approximation of the pitch) \tabularnewline
+\textlabel{?0} & Labeller is uncertain whether it is necessary to annotate a turning point in the f0 contour, even after exploring options with the straight line approximation resynthesis tool \tabularnewline
+\textlabel{0,X} & An f0 turning point whose pitch value is approximately X (a labeller’s approximation of the f0 when the software-based f0 tracking is unreliable) \tabularnewline
+\bottomrule 
+\caption{The Basic labels for the Points tier (for English).%
+}
+\end{longtable}
+
+\subsection*{Scaled Levels: an automatically-labelled point tier}
+\begin{longtable}{cp{.8\linewidth}} \toprule
+\textbf{Label} & \textbf{Given the local pitch range span, the f0 value (in Hz) at corresponding PrStr label time is} \tabularnewline
+\midrule \endhead
+\textlabel{1} & within the lowest 20\% \tabularnewline
+\textlabel{2} & within the 20\%--40\% range \tabularnewline
+\textlabel{3} & within the 40\%--60\% range \tabularnewline
+\textlabel{4} & within the 60\%--80\% range \tabularnewline
+\textlabel{5} & within the highest 20\% \tabularnewline
+\bottomrule 
+\caption{The labels for the Levels tier.%
+}
+\end{longtable}
+
+The algorithm used to calculate the the Levels value is based on the currentF0, localMin, and localMax; it is defined below:
+\begin{center}
+\parbox{.75\linewidth}{
+\texttt{intervalSize = (localMax-localMin)/5}\\
+\texttt{if currentF0 = f0Max}\\
+	\hspace*{1ex}\texttt{then Level = 5}\\
+	\hspace*{1ex}\texttt{else Level = 1 + roundDown((currentF0-localMin)/intervalSize)}}
+\end{center}
+
+
+\subsection*{Range Domains: an interval tier}
+\begin{longtable}{cp{.46\linewidth}p{.32\linewidth}} \toprule \textbf{Label} & \textbf{Phonological Object} & \textbf{Example}\tabularnewline\midrule \endhead
+{[\textit{min}]-[\textit{max}]} &
+	{[\textit{min}] is the local pitch minimum, in Hertz, rounded down to a nearby number ending in a 5 or a 0}; {[\textit{max}] is the local pitch maximum, in Hertz, rounded up to a nearby number ending in a 5 or a 0} &
+	If the local pitch min is 244.2Hz and the local pitch maximum is 381.5Hz, the label should be ‘\textlabel{240-385}’
+	\tabularnewline
+\bottomrule 
+\caption{The Basic labels for the Ranges tier.}
+\end{longtable}
+
+
+\section*{Advanced Labels}
+
+The rows \tikz[baseline, inner sep = 0pt, outer sep = 0pt]\node[anchor=base, fill=green]{\textbf{highlighted in green}\strut}; can be considered the ``default'' labels for this tier; all other beyond this mark some kind of intuition\slash analysis on the part of the labeller.
+
+\subsection*{Advanced PrStr}
+
+\begin{longtable}{cp{.3\linewidth}p{.45\linewidth}}
+	\toprule
+	\textbf{Label} & \textbf{Phonological Object} & \textbf{Time-Aligned with} \tabularnewline
+	\midrule
+	\endhead
+	\rowcolor{green}
+	\textlabel{]} & Prosodic Phrase Boundary & The end of a Words interval where a prosodic phrase ends \tabularnewline
+	\textlabel{?]} & Possible Prosodic Phrase Boundary & The end of a Words interval where a prosodic phrase may end (but the labeller is uncertain) \tabularnewline
+	\textlabel{]]} & Large Prosodic Phrase Boundary & The end of a Words interval where a noticeably large prosodic phrase ends \tabularnewline
+	\textlabel{[} & Prosodic Phrase Boundary & The beginning of a Words interval where a prosodic phrase begins \tabularnewline
+	\textlabel{?[} & Possible Prosodic Phrase Boundary & The beginning of a Words interval where a prosodic phrase may begin (but the labeller is uncertain) \tabularnewline
+	\textlabel{[[} & Large Prosodic Phrase Boundary & The beginning of a Words interval where a noticeably large prosodic phrase \tabularnewline
+	\bottomrule
+	\caption{Advanced PrStr phrasing labels: encoding uncertainty, boundary strength.}
+\end{longtable}
+
+\begin{longtable}{cp{.3\linewidth}p{.45\linewidth}}
+	\toprule
+	\textbf{Label} & \textbf{Phonological Object} & \textbf{Time-Aligned with} \tabularnewline
+	\midrule
+	\endhead
+	\rowcolor{green}
+	\textlabel{*} & Prominence & The center of the Phones/Words interval that is prominent\tabularnewline
+	\textlabel{?*} & Possible Prominence & The center of the Phones/Words interval that might be prominent (but the labeller is uncertain) \tabularnewline
+	\textlabel{**} & Especially Strong Prominence & The center of the Phones/Words interval that is especially prominent \tabularnewline
+	\bottomrule
+	\caption{Advanced PrStr prominence labels: encoding uncertainty, prominence strength.}
+\end{longtable}
+
+\begin{longtable}{cp{.3\linewidth}p{.45\linewidth}}
+	\toprule
+	\textbf{Label} & \textbf{Phonological Object} & \textbf{Time-Aligned with} \tabularnewline
+	\midrule
+	\endhead
+	\textlabel{d} & Disfluency & A point in the utterance where there is a disfluency\tabularnewline
+	\textlabel{\{d} & Start of a disfluent region & A point in the utterance where a disfluent region of speech begins\tabularnewline
+	\textlabel{d\}} & End of a disfluent region & A point in the utterance where a disfluent region of speech ends\tabularnewline
+	\bottomrule
+	\caption{Advanced PrStr labels: encoding disfluency.}
+\end{longtable}
+
+
+\subsection*{Advanced Points}
+
+The possible types of phonological object that a turning point is related to, and the pointers to the location of the Prosodic Structure Tier object in time. A special label is used to indicate ambiguity.
+
+\begin{longtable}{c>{\centering}p{.33\linewidth}>{\centering\arraybackslash}p{.45\linewidth}} \toprule \textbf{Label} & \textbf{Relevant Prosodic Structure object} & \textbf{Relative to an object on the PrStr tier, this f0 turning point is time-aligned…}\tabularnewline\midrule \endhead
+\rowcolor{green}\textlabel{0} & No phonological analysis given by the labeller & N/A\tabularnewline
+\midrule\textlabel{*>} & & …before the relevant \textlabel{*}\tabularnewline\textlabel{*<} & Prominence: \textlabel{*}, \textlabel{?*}, or \textlabel{**} & …after the relevant \textlabel{*}\tabularnewline\textlabel{*@} & & …with the relevant \textlabel{*}\tabularnewline
+\midrule\textlabel{]>} & & …before the relevant \textlabel{]}\tabularnewline\textlabel{]<} & Phrase boundary: \textlabel{]}, \textlabel{?]}, \textlabel{]]} & …after the relevant \textlabel{]}\tabularnewline\textlabel{]@} & & …with the relevant \textlabel{]}\tabularnewline
+\midrule\textlabel{[>} & & …before the relevant \textlabel{[}\tabularnewline\textlabel{[<} & Phrase boundary: \textlabel{[}, \textlabel{?[}, \textlabel{[[} & …after the relevant \textlabel{[}\tabularnewline\textlabel{[@} & & …with the relevant \textlabel{[}\tabularnewline\bottomrule
+\caption{Advanced Points labels: encoding relationships with the PrStr Tier.}
+\end{longtable}
+
+
+
+\subsection*{Advanced Ranges}
+\begin{longtable}{cp{.46\linewidth}p{.32\linewidth}} \toprule \textbf{Label} & \textbf{Phonological Object} & \textbf{Example}\tabularnewline\midrule \endhead
+\rowcolor{green}
+{[\textit{min}]-[\textit{max}]} &
+	{[\textit{min}] is the local pitch minimum, in Hertz, rounded down to a nearby number ending in a 5 or a 0}; {[\textit{max}] is the local pitch maximum, in Hertz, rounded up to a nearby number ending in a 5 or a 0} &
+	If the local pitch min is 244.2Hz and the local pitch maximum is 381.5Hz, the label should be ‘\textlabel{240-385}’
+	\tabularnewline
+{[\textit{min}]([\textit{min2}]:na)} &
+	[\textit{min}] is the Basic ranges value for the minimum, and [\textit{min2}] (written in parentheses) is the Advanced ranges label, capturing labeller intuitions for a value that is not attested locally within that interval &
+	If the local attestable pitch min is 112, but the labeller intuits that the speaker has deliberately not reached a low ‘\textlabel{110(90:na)-385}’
+	\tabularnewline
+{[\textit{max}]([\textit{max2}]:na)} &
+	[\textit{max}] is the Basic ranges value for the minimum, and [\textit{max2}] (written in parentheses) is the Advanced ranges label, capturing labeller intuitions for a value that is not attested locally within that interval &
+	If the local attestable pitch min is 192, but the labeller intuits that the speaker has deliberately not reached a high ‘\textlabel{90-192(300:na)}’
+	\tabularnewline
+{\textlabel{X-}[\textit{max}]} &
+	{“X” represents a pitch minimum that the labeller cannot determine}; {[\textit{max}] is the local pitch maximum, in Hertz, rounded up to a nearby number ending in a 5 or a 0}	 &
+	If the local pitch max is 264.8Hz and the local pitch maximum is not easy to determine, the label should be ‘\textlabel{X-270}’
+	\tabularnewline
+{[\textit{min}]\textlabel{-X}} &
+	{[\textit{min}] is the local pitch minimum, in Hertz, rounded up to a nearby number ending in a 5 or a 0}; {“X” represents a pitch maximum that the labeller cannot determine}	 &
+	If the local pitch min is 138.2Hz and the local pitch maximum is not easy to determine, the label should be ‘\textlabel{135-X}’
+	\tabularnewline
+\textlabel{NA} &
+	“NA” indicates a stretch of unreliable pitch tracking, in places where surrounding information cannot be used to infer the pitch range minimum\slash maximum (\textit{To be used in last resort scenarios}) &
+	If the pitch is a long stretch of unreliable pitch tracking, the label for that unreliable stretch is ‘\textlabel{NA}’
+	\tabularnewline
+\bottomrule 
+\caption{Advanced Ranges labels: encoding f0 range information under uncertainty.}
+\end{longtable}
+
+
+
+\section*{Points Tier Finite State Diagrams}
+%
+%\begin{figure}[H]
+%\centering
+%%
+%\input{figures/Points-FSG-basic.tex}
+%%
+%\caption{A finite statgrammar of the core advanced Points tier labels.%%
+%%\index{}
+%}
+%\end{figure}
+%
+
+\begin{figure}[H]
+\centering
+%
+\input{figures/Points-FSG.tex}
+%
+\caption{A complete finite state grammar for advanced Points tier labels.%
+}
+\end{figure}
