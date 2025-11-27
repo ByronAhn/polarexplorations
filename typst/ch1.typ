@@ -97,7 +97,7 @@
     
     #v(6em)
     #text(size: 14pt, style: "italic")[draft]\
-    November 2022
+    July 2025
   ]
   #v(1fr)
 ]

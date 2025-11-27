@@ -1,0 +1,6 @@
+#figure(
+  image("figures/Appendix-joey.png", width: 87.5%), caption: [
+  `vegetable_list`: There are four prosodic phrases. #label("fig:vegetable.list.phrases")
+  ],
+)
+#label("fig:vegetable.list.phrases")

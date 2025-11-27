@@ -1,0 +1,38 @@
+(\\langtext)\{((?:[^}{]+|\{(?:[^}{]+|\{[^}{]*\})*\})*)\}
+
+(caption:\s*)\[((?:[^\]\[]+|\{(?:[^\]\[]+|\{[^\]\[]*\})*\})*)\]
+
+
+Context: I am an academic researcher and some coauthors and I have written a handbook for a new prosodic annotation system (called "PoLaR"). The handbook is written for an academic audience, and that audience will have a broad range of experience with annotating prosody (from novice to expert). We have decided that we need to add a section to the end of the first chapter that can clarify how a reader should contextualize the information and data in this handbook. To plan the contents of this section, we have met several times and have taken many notes, that are currently in the form of bulleted lists in section 1.6.
+
+Task: Your task is to write 2 to 4 paragraphs of text the convey the key message of the bulleted lists in section 1.6. Before doing so, create a plan that follows all of the instructions below:
+	* Review all of the bullet points, keeping in mind the context of the chapter (the writing style and the content) as well as the intended audience (academic researchers with a wide range of backgrounds on prosodic annotation).
+	* Synthesize all of the information and notes in the bullet points into a set of key messages that should be conveyed to the audience.
+	* Convert those synthesized messages into a narrative that is easy to read, and that highlights the most important information.
+
+
+
+writing style
+different versions
+plan
+
+note in backmatter that we used AI tools for editing the text
+
+
+
+Context: I am an academic researcher and some coauthors and I have written a handbook for a new prosodic annotation system (called "PoLaR"). The handbook is written for an academic audience — more specifically, for novices in prosodic annotation. We have decided that we need to add a section to the end of the first chapter that can clarify how a reader should contextualize the information and data in this handbook. To plan the contents of this section, we have met several times and have taken many notes, that are currently in the form of bulleted lists in section 1.6.
+
+Task: Your task is to write 2 to 4 paragraphs of text the convey the key message of the bulleted lists in section 1.6. Before doing so, create a plan that follows all of the instructions below:
+	* Review all of the bullet points, keeping in mind the context of the chapter (the writing style and the content) as well as the intended audience (academic researchers who have little to no background in prosodic annotation).
+	* Synthesize all of the information and notes in the bullet points into a set of key messages that should be conveyed to the audience.
+	* Convert those synthesized messages into a narrative that is easy to read, and that highlights the most important information.
+
+
+
+
+Context: I am an academic researcher and some coauthors and I have written a handbook for a new prosodic annotation system (called "PoLaR"). The handbook is written for an academic audience — more specifically, for people with a background in prosodic phonology, who don't fully understand the challenges and benefits of this level of phonetic granularity in prosodic annotation. We have decided that we need to add a section to the end of the first chapter that can clarify how a reader should contextualize the information and data in this handbook. To plan the contents of this section, we have met several times and have taken many notes, that are currently in the form of bulleted lists in section 1.6.
+
+Task: Your task is to write 2 to 4 paragraphs of text the convey the key message of the bulleted lists in section 1.6. Before doing so, create a plan that follows all of the instructions below:
+	* Review all of the bullet points, keeping in mind the context of the chapter (the writing style and the content) as well as the intended audience (academic researchers who have a background in prosodic phonology).
+	* Synthesize all of the information and notes in the bullet points into a set of key messages that should be conveyed to the audience.
+	* Convert those synthesized messages into a narrative that is easy to read, and that highlights the most important information.

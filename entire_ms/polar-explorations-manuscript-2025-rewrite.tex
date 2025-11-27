@@ -1768,7 +1768,28 @@ The options and the order of the notation is summarized below. (A more complete 
 \begin{figure}[H]
 \centering
 %
-\input{figures/Points-FSG-basic.tex}
+  \begin{tikzpicture}[node distance=4em, anchor=west, align=flush center, FLOW/.style={->, very thick}, LABEL/.style={draw, fill=yellow!80, inner sep=.75em}, scale = .775, transform shape]
+    \node[draw, text width=5.5em] (node2) {Assert a relationship to a PrStr object?};
+    \node[LABEL, below right=1em and 6em of node2.east] (node3no) {\textlabel{0}};
+    \node[LABEL, above right=1em and 6em of node2.east] (node3yes) {\textlabel{*}\\\textlabel{]}\\\textlabel{[}};
+    \node[draw, text width=8em, right=3em of node3yes] (node4) {Where is the PrStr Tier object that corresponds to the Points Tier object?};
+    \node[LABEL, right=3em of node4.east] (node5) {\textlabel{>}\\\textlabel{<}\\\textlabel{@}};
+    \node[draw, text width=8em, below=1.5em of node5, anchor=north] (node6) {Could this Points Tier object also correspond to another PrStr object?};
+    \node[right=3em of node6] (node7yes) {};
+    \node[LABEL, above=of node7yes.center] (node7) {\textlabel{/}};
+    \node[above=5em of node7] (node7-loopback1) {};
+    \node[above=2em of node3yes] (node7-loopback2) {};
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{Yes} (node3yes.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{No} (node3no.west);
+    \draw [black,FLOW] (node3yes.east) -- (node4.west);
+    \draw [black,FLOW] (node4.east) -- (node5.west);
+    \draw [black,FLOW] (node5.south) -- (node6.north);
+    \draw [black,FLOW] (node6.east) -- node[pos=0.5, above, sloped]{Yes} (node7yes.center) -- (node7.south);
+    \draw [black,FLOW] (node7.north) --  (node7-loopback1.center) -- (node7-loopback2.center) -- (node3yes);
+
+  \end{tikzpicture}
 %
 \caption{A grammar of the core Advanced Points tier labels.%
 \label{fig:Points FSG basic}%
@@ -2026,7 +2047,39 @@ The table below lists 7 Points Tier objects that a PoLaR labeller can use. It is
 \begin{figure}[H]
 \centering
 %
-\input{figures/Points-FSG.tex}
+  \begin{tikzpicture}[node distance=4em, anchor=west, align=flush center, FLOW/.style={->, very thick}, LABEL/.style={draw, fill=yellow!80, inner sep=.75em}, scale = .625, transform shape]
+    \node[draw, text width=6em,anchor=east] (node0) {Is the labeller certain that there should be a Point object here?};
+    \node (node1) [right=5em of node0] {};
+    \node (node1up) [above=1em of node1] {};
+    \node (node1down) [LABEL, below=1em of node1] {\textlabel{?}};
+    \node[draw, text width=5.5em, right=5em of node1] (node2) {Assert a relationship to a PrStr object?};
+    \node[LABEL, below right=1em and 6em of node2.east] (node3no) {\textlabel{0}};
+    \node[LABEL, above right=1em and 6em of node2.east] (node3yes) {\textlabel{*}\\\textlabel{]}\\\textlabel{[}};
+    \node[draw, text width=8em, right=3em of node3yes] (node4) {Where is the PrStr Tier object that corresponds to the Points Tier object?};
+    \node[LABEL, right=3em of node4.east] (node5) {\textlabel{>}\\\textlabel{<}\\\textlabel{@}};
+    \node[draw, text width=8em, below=5.5em of node5, anchor=north] (node6) {Could this Points Tier object also correspond to another PrStr object?};
+    \node[right=3em of node6] (node7yes) {};
+    \node[LABEL, above=of node7yes.center] (node7) {\textlabel{/}};
+    \node[above=9em of node7] (node7-loopback1) {};
+    \node[above=2em of node3yes] (node7-loopback2) {};
+    \node[draw, text width=10em, below=2em of node3no] (node8) {Does the labeller want to directly annotate a value for the pitch (in Hz) for this Point?};
+    \node[LABEL, text width=8em, left=of node8] (node9) {\textlabel{,}<\textit{value in Hz}>};
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+    \draw [black,FLOW] (node0.east) -- node[pos=0.5,below, sloped]{No} (node1down.west);
+    \draw [black,FLOW] (node1down.east) -- (node2.west);
+    \draw [black,FLOW] (node0.east) -- node[pos=0.5, above, sloped]{Yes} (node2.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{Yes} (node3yes.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{No} (node3no.west);
+    \draw [black,FLOW] (node3yes.east) -- (node4.west);
+    \draw [black,FLOW] (node4.east) -- (node5.west);
+    \draw [black,FLOW] (node3no.south) -- (node8.north);
+    \draw [black,FLOW] (node5.south) -- (node6.north);
+    \draw [black,FLOW] (node6.west) -- node[pos=0.5, above, sloped]{No} (node8.east);
+    \draw [black,FLOW] (node6.east) -- node[pos=0.5, above, sloped]{Yes} (node7yes.center) -- (node7.south);
+    \draw [black,FLOW] (node7.north) --  (node7-loopback1.center) -- (node7-loopback2.center) -- (node3yes);
+    \draw [black,FLOW] (node8.west) -- node[pos=0.5, above, sloped]{Yes} (node9.east);
+  \end{tikzpicture}
 %
 \caption{A finite state grammar for Advanced Points tier labels.%
 \label{fig:Points FSG complete}%
@@ -2052,7 +2105,38 @@ Let us begin by imagining a set of utterances with a complex set of changes in r
 \begin{figure}[H]
 \centering
 %
-\input{figures/Ranges-bars.tex}
+\begin{tikzpicture}
+\draw (0,4.5) -- (0,0) -- (9,0);
+\node[rotate=90] at (-1,2.25) {\relsize{-.5}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-1}\bfseries}]
+	\node at (0,0) {0};
+	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\begin{scope}[anchor=north,align=center, style={font=\relsize{-1}\bfseries}]
+	\node at (1,0) {Utt.1\\pt.1};
+	\node at (2,0) {Utt.1\\pt.2};
+	\node at (3,0) {Utt.2\\pt.1};
+	\node at (4,0) {Utt.2\\pt.2};
+	\node at (5,0) {Utt.3\\pt.1};
+	\node at (6,0) {Utt.3\\pt.2};
+	\node at (7,0) {Utt.3\\pt.3};
+	\node at (8,0) {Utt.4};
+\end{scope}
+\draw[fill=CB1] (.8,.75) rectangle (1.2,3.6);
+\draw[fill=CB1] (1.8,.75) rectangle (2.2,1.6);
+%
+\draw[fill=CB2] (2.8,1) rectangle (3.2,2.25);
+\draw[fill=CB2] (3.8,2.5) rectangle (4.2,3.45);
+%
+\draw[fill=CB3] (4.8,1) rectangle (5.2,2.2);
+\draw[fill=CB3] (5.8,1) rectangle (6.2,4.1);
+\draw[fill=CB3] (6.8,.5) rectangle (7.2,2);
+%
+\draw[fill=CB4] (7.8,.5) rectangle (8.2,1.25);
+\end{tikzpicture}
 %
 \caption[An idealization of pitch ranges in four hypothetical utterances.]{The y-axis is f0 (in Hz) and each of the bars indicates the speaker’s local pitch range in particular (hypothetical) utterances; successive utterances are indicated by color changes.%
 \label{fig:Ranges bars}%
@@ -2193,7 +2277,39 @@ For example, the observed f0 minimum for a given interval does not always occur 
 \begin{figure}[H]
 \centering
 %
-\input{figures/Ranges-what-if3.tex}
+\tikzset{
+    dots/.style={
+        line width=4pt,
+        line cap=round,
+        dash pattern=on 0pt off 6pt
+    }
+}
+\begin{tikzpicture}[scale=1.25]
+\draw (0,4.25) rectangle (5.25,1.5);
+%\draw (0,1.5) rectangle (5.25,1);
+%\node at (2.625, 1.25) {X-330};
+\node[rotate=90] at (-0.75,2.875) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+%	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {2,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\coordinate (pt1) at (0.2,3.1);
+\coordinate (pt2) at (.7,3.3);
+\coordinate (pt3) at (4.6,3.3);
+\coordinate (pt4) at (5.1,3.6);
+%\draw[fill] (pt1) circle (.05);
+%\draw[fill] (pt2) circle (.05);
+%\draw[fill] (pt3) circle (.05);
+%\draw[fill] (pt4) circle (.05);
+\draw[dots, CB1] (pt1) .. controls (pt2) .. (3,3.3) .. controls (pt3) .. (pt4);
+\end{tikzpicture}
 %\includegraphics[width=4in]{ranges-what-if3.png}
 %
 \caption{A hypothetical pitch track.%
@@ -2222,7 +2338,43 @@ On the basis of the f0 alone, the labeller would, by the default approach, label
 \begin{figure}[H]
 \centering
 %
-\input{figures/Ranges-what-if2.tex}
+\begin{tikzpicture}[scale=1.25]
+\draw (0,4.5) -- (0,0.75) -- (1.8,.75);
+%\node[anchor=south west] at (-0.9,-.2) {\includegraphics[scale=.4]{ranges-what-if1.png}};
+\node[rotate=90] at (-0.75,2.2) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {1,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+
+\draw[fill=CB1!40] (.3,1.35) rectangle (1.5,3.65);
+\coordinate (pt1) at (0.925,3.6);
+\coordinate (pt2) at (.825,3.57);
+%
+\coordinate (pt3) at (.885,3.48);
+\coordinate (pt4) at (.933,3.23);
+\coordinate (pt5) at (1.05,3);
+\coordinate (pt6) at (0.85,2.9);
+\coordinate (pt7) at (0.925,2.7);
+%
+\coordinate (pt8) at (.65,2.62);
+\coordinate (pt9) at (0.75,2.58);
+\coordinate (pt10) at (.85,2.6);
+\coordinate (pt11) at (.95,2.6);
+\coordinate (pt12) at (1.05,2.55);
+\coordinate (pt13) at (1.15,2.65);
+\foreach \x in {1,...,13}
+{
+\draw[fill] (pt\x) circle (.04);
+}
+%
+\end{tikzpicture}
 %\includegraphics[width=2in]{ranges-what-if2.png}
 %
 \caption{The filled box indicates the speaker’s intended local pitch range, and the black dots indicate f0 observations.%
@@ -2291,7 +2443,56 @@ Finally, there are cases where there is what seems to be an entire Range interva
 \begin{figure}[H]
 \centering
 %
-\input{figures/Ranges-what-if4.tex}
+\tikzset{
+    dots/.style={
+        line width=4pt,
+        line cap=round,
+        dash pattern=on 0pt off 6pt
+    }
+}
+\begin{tikzpicture}[scale=1.25]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if4.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+%	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {2,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\begin{scope}
+\draw (0,4.25) rectangle (7.75,1.75);
+\draw (0,1.75) rectangle (3.5,1.25);
+\node at (1.75, 1.5) {\relsize{-2}220-350};
+\draw (3.5,1.75) rectangle (7.75,1.25);
+\node at (5.625, 1.5) {\relsize{-2}(100:na)-(220:na)};
+\coordinate (pt1) at (0.2,2.5);
+\coordinate (pt2) at (.7,3.4);
+\coordinate (pt3) at (1.4,2.35);
+\coordinate (pt4) at (2,2.75);
+\coordinate (pt5) at (2.35,2.25);
+\coordinate (pt6) at (2.75,2.22);
+\coordinate (pt7) at (4.75,2.1);
+\coordinate (pt8) at (4.85,2.2);
+\coordinate (pt9) at (5.05,1.95);
+\coordinate (pt10) at (6.7,3.75);
+\coordinate (pt11) at (6.85,3.75);
+\coordinate (pt12) at (6.9,3.65);
+\coordinate (pt13) at (7.3,3.85);
+\coordinate (pt14) at (7.4,3.75);
+%\foreach \x in {1,...,14}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt1) sin (pt2) cos ([xshift=-7,yshift=10]pt3) sin (pt3) cos ([xshift=7,yshift=5]pt3) sin  (pt4) cos ([xshift=-5,yshift=7]pt5) sin (pt5) -- (pt6);
+\draw[CB1, dots] (pt7) .. controls (pt8) .. (pt9);
+\draw[CB1, dots] (pt10) .. controls (pt11) and (pt12) .. ([xshift=-3]pt13) .. controls (pt13) .. (pt14);
+\end{scope}
+\end{tikzpicture}
 %\includegraphics[width=4in]{ranges-what-if4.png}
 %
 \caption{A hypothetical pitch track.%
@@ -2307,7 +2508,48 @@ As a contrast with Fig. [fig:ranges what if 4], consider Fig. \ref{fig:ranges-wh
 \begin{figure}[H]
 \centering
 %
-\input{figures/Ranges-what-if5.tex}
+\tikzset{
+    dots/.style={
+        line width=4pt,
+        line cap=round,
+        dash pattern=on 0pt off 6pt
+    }
+}
+\begin{tikzpicture}[scale=1.25]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if5.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+%	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {2,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\begin{scope}
+\draw (0,4.25) rectangle (7.75,1.75);
+\draw (0,1.75) rectangle (7.75,1.25);
+\node at (3.875, 1.5) {\relsize{-2}220-350};
+\coordinate (pt1) at (0.2,2.5);
+\coordinate (pt2) at (.7,3.4);
+\coordinate (pt3) at (1.4,2.35);
+\coordinate (pt4) at (2,2.75);
+\coordinate (pt5) at (2.35,2.25);
+\coordinate (pt6) at (2.75,2.22);
+\coordinate (pt7) at (5.3,2.25);
+\coordinate (pt8) at (6.4,2.25);
+\coordinate (pt9) at (7.45,2.2);
+%\foreach \x in {1,...,9}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt1) sin (pt2) cos ([xshift=-7,yshift=10]pt3) sin (pt3) cos ([xshift=7,yshift=5]pt3) sin  (pt4) cos ([xshift=-5,yshift=7]pt5) sin (pt5) -- (pt6);
+\draw[CB1, dots] (pt7) .. controls (pt8) .. (pt9);
+\end{scope}
+\end{tikzpicture}
 %\includegraphics[width=4in]{ranges-what-if5.png}
 %
 \caption{A hypothetical pitch track.%
@@ -2837,7 +3079,61 @@ As a concrete example for this general description, consider two cases where the
 \begin{figure}[H]
 \centering
 %
-\input{figures/Usages-HHLL-final-fall.tex}
+\tikzset{
+    dots/.style={
+        line width=4pt,
+        line cap=round,
+        dash pattern=on 0pt off 6pt
+    }
+}
+\begin{tikzpicture}[scale=1.25]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if4.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+%	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {2,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\begin{scope}
+\draw (0,4.25) rectangle (6.4,1.75);
+\draw (0.0,1.75) rectangle (1.6,1.25);
+\node at (.8, 1.5) {\relsize{-2}word1};
+\draw (1.6,1.75) rectangle (3.2,1.25);
+\node at (2.4, 1.5) {\relsize{-2}word2};
+\draw (3.2,1.75) rectangle (4.8,1.25);
+\node at (4, 1.5) {\relsize{-2}word3};
+\draw (4.8,1.75) rectangle (6.4,1.25);
+\node at (5.6, 1.5) {\relsize{-2}word4};
+%
+\draw (0,1.25) rectangle (6.4,0.75);
+\draw (1.3, 1.25) -- (1.3, 0.75);
+\node[fill=white] at (1.3, 1) {\relsize{-2}H*};
+\draw (2.8, 1.25) -- (2.8, 0.75);
+\node[fill=white] at (2.8, 1) {\relsize{-2}H*};
+\draw (6.05, 1.25) -- (6.05, 0.75);
+\node[fill=white] at (6.05, 1) {\relsize{-2}L-L\%};
+%
+\coordinate (pt1) at (0.2,2.85);
+\coordinate (pt2) at (1.4,3.95);
+\coordinate (pt3) at (2.8,3.95);
+\coordinate (pt4) at (3.95,2.25);
+\coordinate (pt5) at (6.2,2.25);
+\coordinate (pt5a) at (5.2,2.25);
+\coordinate (pt5b) at (6.1,1.85);
+%\foreach \x in {1,...,14}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt1) sin (pt2) -- (pt3) cos ([xshift=0,yshift=7]pt4) sin ([xshift=7,yshift=0]pt4) -- (pt5);
+\draw[CB2, line width=2.33pt, line cap=round, dashed] (pt1) sin (pt2) -- (pt3) cos ([xshift=0,yshift=7]pt4) sin ([xshift=7,yshift=0]pt4) -- (pt5a) -- (pt5b);
+\end{scope}
+\end{tikzpicture}
 %
 \caption{The final low plateau and low plateau with an extra fall have conventionally been labelled as \textlabel{L-L\%} in MAE\_ToBI.%
 \label{fig:final low Usages}%
@@ -2848,7 +3144,62 @@ As a concrete example for this general description, consider two cases where the
 \begin{figure}[H]
 \centering
 %
-\input{figures/Usages-HHLL-sagging.tex}
+\tikzset{
+    dots/.style={
+        line width=4pt,
+        line cap=round,
+        dash pattern=on 0pt off 6pt
+    }
+}
+\begin{tikzpicture}[scale=1.25]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if4.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+%	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {2,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\begin{scope}
+\draw (0,4.25) rectangle (6.4,1.75);
+\draw (0.0,1.75) rectangle (1.6,1.25);
+\node at (.8, 1.5) {\relsize{-2}word1};
+\draw (1.6,1.75) rectangle (3.2,1.25);
+\node at (2.4, 1.5) {\relsize{-2}word2};
+\draw (3.2,1.75) rectangle (4.8,1.25);
+\node at (4, 1.5) {\relsize{-2}word3};
+\draw (4.8,1.75) rectangle (6.4,1.25);
+\node at (5.6, 1.5) {\relsize{-2}word4};
+%
+\draw (0,1.25) rectangle (6.4,0.75);
+\draw (1.3, 1.25) -- (1.3, 0.75);
+\node[fill=white] at (1.3, 1) {\relsize{-2}H*};
+\draw (2.8, 1.25) -- (2.8, 0.75);
+\node[fill=white] at (2.8, 1) {\relsize{-2}H*};
+\draw (6.05, 1.25) -- (6.05, 0.75);
+\node[fill=white] at (6.05, 1) {\relsize{-2}L-L\%};
+%
+\coordinate (pt1) at (0.2,2.85);
+\coordinate (pt2) at (1.4,3.95);
+\coordinate (pt2a) at (2.1,3.45);
+\coordinate (pt2b) at (2.1,3);
+\coordinate (pt3) at (2.8,3.95);
+\coordinate (pt4) at (3.95,2.25);
+\coordinate (pt5) at (6.2,2.25);
+%\foreach \x in {1,...,14}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt1) sin (pt2) -- (pt3) cos ([xshift=0,yshift=7]pt4) sin ([xshift=7,yshift=0]pt4) -- (pt5);
+\draw[CB3, line width=2.33pt, line cap=round, dashed] (pt1) sin (pt2) cos ([xshift=-5,yshift=2]pt2a) sin (pt2a) cos ([xshift=5,yshift=2]pt2a) sin (pt3) cos ([xshift=0,yshift=7]pt4) sin ([xshift=7,yshift=0]pt4) -- (pt5);
+\draw[CB4, line width=2pt, dotted] (pt1) sin (pt2) cos ([xshift=-5,yshift=2]pt2b) sin (pt2b) cos ([xshift=5,yshift=2]pt2b) sin (pt3) cos ([xshift=0,yshift=7]pt4) sin ([xshift=7,yshift=0]pt4) -- (pt5);
+\end{scope}
+\end{tikzpicture}
 %
 \caption{A contour with two High pitch accents (MAE\_ToBI: \textlabel{H*}) can variably have a plateau between corresponding peaks or various degrees of sagging between them.%
 \label{fig:sagging Usages}%
@@ -2882,7 +3233,95 @@ In addition, given that Levels labels are “scaled” (i.e., normalized, based 
 \begin{figure}[H]
 \centering
 %
-\begin{tikzpicture}[scale=.85, transform shape]\input{figures/Usages-slopes-1.tex}\end{tikzpicture}~~\begin{tikzpicture}[scale=.85, transform shape]\input{figures/Usages-slopes-2.tex}\end{tikzpicture}
+\begin{tikzpicture}[scale=.85, transform shape]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if5.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+	\node at (0,1) {100};
+	\node at (0,2) {200};
+	\node at (0,3) {300};
+	\node at (0,4) {400};
+\end{scope}
+\foreach \y in {1,...,4}
+{
+	\draw (0,\y) -- (-.1,\y);
+}
+\begin{scope}
+\draw (0,4.25) rectangle (7.75,.5);
+\draw (0,0) rectangle (7.75,.5);
+\node at (3.875, .25) {\relsize{-2}100-400};
+\coordinate (pt0) at (0.2,1.5);
+\coordinate (pt1) at (1.2,1.85);
+\coordinate (pt2) at (1.7,3.0);
+\coordinate (pt3) at (2.4,1.45);
+\coordinate (pt4) at (3,1.15);
+\coordinate (pt5) at (6,1.05);
+\coordinate (pt6) at (7,3.95);
+%\coordinate (pt7) at (5.3,2.25);
+%\coordinate (pt8) at (6.4,2.25);
+%\coordinate (pt9) at (7.45,2.2);
+%\foreach \x in {1,...,9}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt0) cos (pt1) sin (pt2) cos (pt3) sin  (pt4) cos (pt5) cos (pt6);
+%\draw[CB1, dots] (pt7) .. controls (pt8) .. (pt9);
+\end{scope}
+\begin{scope}[style={font=\relsize{-1}}]
+\draw[red, fill = red, fill opacity = .35] (6,.95) rectangle (7.1,4.05);
+\node [red, anchor=north] at (6.5, .95) {250ms};
+\node [red, rotate = 90, anchor=north] at (7.1, 2.5) {300Hz};
+\end{scope}
+%\begin{scope}[very thick, red]
+%\draw [decorate, decoration = {brace, mirror}] (6,.85) --  (7,.85);	
+%\end{scope}
+\end{tikzpicture}~~\begin{tikzpicture}[scale=.85, transform shape]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if5.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+	\node at (0,1) {100};
+	\node at (0,2.5) {150};
+%	\node at (0,3) {300};
+	\node at (0,4) {200};
+\end{scope}
+%\foreach \y in {1,...,3}
+%{
+	\draw (0,1) -- (-.1,1);
+	\draw (0,2.5) -- (-.1,2.5);
+	\draw (0,4) -- (-.1,4);
+%}
+\begin{scope}
+\draw (0,4.25) rectangle (7.75,.5);
+\draw (0,0) rectangle (7.75,.5);
+\node at (3.875, .25) {\relsize{-2}100-200};
+\coordinate (pt0) at (0.2,1.5);
+\coordinate (pt1) at (1.2,1.85);
+\coordinate (pt2) at (1.7,3.0);
+\coordinate (pt3) at (2.4,1.45);
+\coordinate (pt4) at (3,1.15);
+\coordinate (pt5) at (6,1.05);
+\coordinate (pt6) at (7,3.95);
+%\coordinate (pt7) at (5.3,2.25);
+%\coordinate (pt8) at (6.4,2.25);
+%\coordinate (pt9) at (7.45,2.2);
+%\foreach \x in {1,...,9}
+%{
+%	\draw[fill] (pt\x) circle (.05);
+%}
+\draw[CB1, dots] (pt0) cos (pt1) sin (pt2) cos (pt3) sin  (pt4) cos (pt5) cos (pt6);
+%\draw[CB1, dots] (pt7) .. controls (pt8) .. (pt9);
+\end{scope}
+\begin{scope}[style={font=\relsize{-1}}]
+\draw[red, fill = red, fill opacity = .35] (6,.95) rectangle (7.1,4.05);
+\node [red, anchor=north] at (6.5, .95) {250ms};
+\node [red, rotate = 90, anchor=north] at (7.1, 2.5) {100Hz};
+\end{scope}
+%\begin{scope}[very thick, red]
+%\draw [decorate, decoration = {brace, mirror}] (6,.85) --  (7,.85);	
+%\end{scope}
+\end{tikzpicture}
 %
 \caption{Two hypothetical utterances that differ primarily in pitch range; note different vertical scales.%
 \label{fig:Usages-slopes}%
@@ -2897,7 +3336,64 @@ Beyond this, if Advanced PoLaR labels are used —in particular Advanced Points 
 \begin{figure}[H]
 \centering
 %
-\begin{tikzpicture}[scale=1.25]\input{figures/Usages-slopes-3.tex}\end{tikzpicture}
+\begin{tikzpicture}[scale=1.25]
+%\node[anchor=north west, xscale=.225, yscale=.225] at (-0.525,4.15) {\includegraphics{ranges-what-if5.png}};
+\node[rotate=90] at (-0.75,3) {\relsize{-2}f0 (Hz)};
+\begin{scope}[anchor=east, style={font=\relsize{-2}}]
+%	\node at (0,0) {0};
+	\node at (0,1) {100};
+	\node at (0,2.5) {150};
+%	\node at (0,3) {300};
+	\node at (0,4) {200};
+\end{scope}
+%\foreach \y in {1,...,3}
+%{
+	\draw (0,1) -- (-.1,1);
+	\draw (0,2.5) -- (-.1,2.5);
+	\draw (0,4) -- (-.1,4);
+%}
+\begin{scope}
+\draw (0,4.25) rectangle (7.75,.5);
+
+\draw (0,0) rectangle (7.75,.5);
+\node[anchor=west] at (7.75,.25) {\relsize{-2}{PrStr}};
+\draw (1.5,0) -- node[fill=white]{\relsize{-1}{\texttt{*}}} (1.5,.5);
+\draw (7.2,0) -- node[fill=white]{\relsize{-1}{\texttt{]}}} (7.2,.5);
+
+\draw (0,-.5) rectangle (7.75,0);
+\node[anchor=west] at (7.75,-.25) {\relsize{-2}{Points}};
+\draw (0.2,0) -- node[fill=white]{\relsize{-1}{\texttt{0}}} (0.2,-.5);
+\draw (1.1,0) -- node[fill=white]{\relsize{-1}{\texttt{*>}}} (1.1,-.5);
+\draw (1.7,0) -- node[fill=white]{\relsize{-1}{\texttt{*<}}} (1.7,-.5);
+\draw (2.7,0) -- node[fill=white]{\relsize{-1}{\texttt{]>}}} (2.7,-.5);
+%\draw (3,0) -- node[fill=white]{\relsize{-1}{\texttt{0}}} (3,-.5);
+\draw (6,0) -- node[fill=white]{\relsize{-1}{\texttt{]>}}} (6,-.5);
+\draw (7,0) -- node[fill=white]{\relsize{-1}{\texttt{]>}}} (7,-.5);
+
+\draw (0,-1) rectangle (7.75,-.5);
+\node[anchor=west] at (7.75,-.75) {\relsize{-2}{Levels}};
+\draw (0.2,-1) -- node[fill=white]{\relsize{-2}{{1}}} (0.2,-.5);
+\draw (1.1,-1) -- node[fill=white]{\relsize{-2}{{2}}} (1.1,-.5);
+\draw (1.7,-1) -- node[fill=white]{\relsize{-2}{{4}}} (1.7,-.5);
+\draw (2.7,-1) -- node[fill=white]{\relsize{-2}{{1}}} (2.7,-.5);
+\draw (6,-1) -- node[fill=white]{\relsize{-2}{{1}}} (6,-.5);
+\draw (7,-1) -- node[fill=white]{\relsize{-2}{{5}}} (7,-.5);
+
+\draw (0,-1.5) rectangle (7.75,-1);
+\node[anchor=west] at (7.75,-1.25) {\relsize{-2}{Ranges}};
+\node at (3.875, -1.25) {\relsize{-2}100-200};
+
+\coordinate (pt0) at (0.2,1.5);
+\coordinate (pt1) at (1.2,1.85);
+\coordinate (pt2) at (1.7,3.0);
+\coordinate (pt3) at (2.4,1.45);
+\coordinate (pt4) at (3,1.15);
+\coordinate (pt5) at (6,1.05);
+\coordinate (pt6) at (7,3.95);
+
+\draw[CB1, dots] (pt0) cos (pt1) sin (pt2) cos (pt3) sin  (pt4) cos (pt5) cos (pt6);
+\end{scope}
+\end{tikzpicture}
 %
 \caption{Advanced PoLaR labels for a hypothetical utterance.%
 \label{fig:Usages-slopes-advanced}%
@@ -3556,7 +4052,39 @@ The possible types of phonological object that a turning point is related to, an
 \begin{figure}[H]
 \centering
 %
-\input{figures/Points-FSG.tex}
+  \begin{tikzpicture}[node distance=4em, anchor=west, align=flush center, FLOW/.style={->, very thick}, LABEL/.style={draw, fill=yellow!80, inner sep=.75em}, scale = .625, transform shape]
+    \node[draw, text width=6em,anchor=east] (node0) {Is the labeller certain that there should be a Point object here?};
+    \node (node1) [right=5em of node0] {};
+    \node (node1up) [above=1em of node1] {};
+    \node (node1down) [LABEL, below=1em of node1] {\textlabel{?}};
+    \node[draw, text width=5.5em, right=5em of node1] (node2) {Assert a relationship to a PrStr object?};
+    \node[LABEL, below right=1em and 6em of node2.east] (node3no) {\textlabel{0}};
+    \node[LABEL, above right=1em and 6em of node2.east] (node3yes) {\textlabel{*}\\\textlabel{]}\\\textlabel{[}};
+    \node[draw, text width=8em, right=3em of node3yes] (node4) {Where is the PrStr Tier object that corresponds to the Points Tier object?};
+    \node[LABEL, right=3em of node4.east] (node5) {\textlabel{>}\\\textlabel{<}\\\textlabel{@}};
+    \node[draw, text width=8em, below=5.5em of node5, anchor=north] (node6) {Could this Points Tier object also correspond to another PrStr object?};
+    \node[right=3em of node6] (node7yes) {};
+    \node[LABEL, above=of node7yes.center] (node7) {\textlabel{/}};
+    \node[above=9em of node7] (node7-loopback1) {};
+    \node[above=2em of node3yes] (node7-loopback2) {};
+    \node[draw, text width=10em, below=2em of node3no] (node8) {Does the labeller want to directly annotate a value for the pitch (in Hz) for this Point?};
+    \node[LABEL, text width=8em, left=of node8] (node9) {\textlabel{,}<\textit{value in Hz}>};
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%
+    \draw [black,FLOW] (node0.east) -- node[pos=0.5,below, sloped]{No} (node1down.west);
+    \draw [black,FLOW] (node1down.east) -- (node2.west);
+    \draw [black,FLOW] (node0.east) -- node[pos=0.5, above, sloped]{Yes} (node2.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{Yes} (node3yes.west);
+    \draw [black,FLOW] (node2.east) -- node[pos=0.5, above, sloped]{No} (node3no.west);
+    \draw [black,FLOW] (node3yes.east) -- (node4.west);
+    \draw [black,FLOW] (node4.east) -- (node5.west);
+    \draw [black,FLOW] (node3no.south) -- (node8.north);
+    \draw [black,FLOW] (node5.south) -- (node6.north);
+    \draw [black,FLOW] (node6.west) -- node[pos=0.5, above, sloped]{No} (node8.east);
+    \draw [black,FLOW] (node6.east) -- node[pos=0.5, above, sloped]{Yes} (node7yes.center) -- (node7.south);
+    \draw [black,FLOW] (node7.north) --  (node7-loopback1.center) -- (node7-loopback2.center) -- (node3yes);
+    \draw [black,FLOW] (node8.west) -- node[pos=0.5, above, sloped]{Yes} (node9.east);
+  \end{tikzpicture}
 %
 \caption{A complete finite state grammar for advanced Points tier labels.%
 }

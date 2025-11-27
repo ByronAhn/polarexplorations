@@ -1,0 +1,179 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 1.4381257175082607 
+tiers? <exists> 
+size = 8 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Words" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        intervals: size = 6 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.18087449584834997 
+            text = "" 
+        intervals [2]:
+            xmin = 0.18087449584834997 
+            xmax = 0.28584621988260434 
+            text = "you" 
+        intervals [3]:
+            xmin = 0.28584621988260434 
+            xmax = 0.6357519666634521 
+            text = "need" 
+        intervals [4]:
+            xmin = 0.6357519666634521 
+            xmax = 0.715730423070503 
+            text = "a" 
+        intervals [5]:
+            xmin = 0.715730423070503 
+            xmax = 1.3555580743269107 
+            text = "loan" 
+        intervals [6]:
+            xmin = 1.3555580743269107 
+            xmax = 1.4381257175082607 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Phones" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        intervals: size = 11 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.18087449584834997 
+            text = "" 
+        intervals [2]:
+            xmin = 0.18087449584834997 
+            xmax = 0.21586507052643475 
+            text = "j" 
+        intervals [3]:
+            xmin = 0.21586507052643475 
+            xmax = 0.28584621988260434 
+            text = "uː" 
+        intervals [4]:
+            xmin = 0.28584621988260434 
+            xmax = 0.4458031326967062 
+            text = "n" 
+        intervals [5]:
+            xmin = 0.4458031326967062 
+            xmax = 0.6024276098271809 
+            text = "iː" 
+        intervals [6]:
+            xmin = 0.6024276098271809 
+            xmax = 0.6357519666634521 
+            text = "d" 
+        intervals [7]:
+            xmin = 0.6357519666634521 
+            xmax = 0.715730423070503 
+            text = "ɐ" 
+        intervals [8]:
+            xmin = 0.715730423070503 
+            xmax = 0.8423629790483338 
+            text = "l" 
+        intervals [9]:
+            xmin = 0.8423629790483338 
+            xmax = 1.088963219636741 
+            text = "oʊ" 
+        intervals [10]:
+            xmin = 1.088963219636741 
+            xmax = 1.3555580743269107 
+            text = "n" 
+        intervals [11]:
+            xmin = 1.3555580743269107 
+            xmax = 1.4381257175082607 
+            text = "" 
+    item [3]:
+        class = "TextTier" 
+        name = "ToBI tones" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        points: size = 4 
+        points [1]:
+            number = 0.18920558505741777 
+            mark = "%H" 
+        points [2]:
+            number = 0.5324464604710114 
+            mark = "L*" 
+        points [3]:
+            number = 0.9656630993425372 
+            mark = "H*" 
+        points [4]:
+            number = 1.3555580743269107 
+            mark = "L-L%" 
+    item [4]:
+        class = "TextTier" 
+        name = "PrStr" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        points: size = 3 
+        points [1]:
+            number = 0.5341126783128249 
+            mark = "*" 
+        points [2]:
+            number = 0.9656630993425374 
+            mark = "*" 
+        points [3]:
+            number = 1.3555580743269107 
+            mark = "]" 
+    item [5]:
+        class = "TextTier" 
+        name = "Points" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        points: size = 5 
+        points [1]:
+            number = 0.18920558505741777 
+            mark = "0,410" 
+        points [2]:
+            number = 0.5541072924145877 
+            mark = "0,100" 
+        points [3]:
+            number = 0.9618972165474465 
+            mark = "0" 
+        points [4]:
+            number = 1.145614626258402 
+            mark = "0,110" 
+        points [5]:
+            number = 1.3089039747561309 
+            mark = "0,120" 
+    item [6]:
+        class = "TextTier" 
+        name = "Levels" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        points: size = 5 
+        points [1]:
+            number = 0.18920558505741777 
+            mark = "5" 
+        points [2]:
+            number = 0.5541072924145877 
+            mark = "1" 
+        points [3]:
+            number = 0.9618972165474465 
+            mark = "5" 
+        points [4]:
+            number = 1.145614626258402 
+            mark = "1" 
+        points [5]:
+            number = 1.3089039747561309 
+            mark = "1" 
+    item [7]:
+        class = "IntervalTier" 
+        name = "Ranges" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.4381257175082607 
+            text = "100-410" 
+    item [8]:
+        class = "TextTier" 
+        name = "misc" 
+        xmin = 0 
+        xmax = 1.4381257175082607 
+        points: size = 0 

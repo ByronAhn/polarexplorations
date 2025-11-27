@@ -1,0 +1,614 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 6.0314375 
+tiers? <exists> 
+size = 7 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Words" 
+        xmin = 0 
+        xmax = 6.0314375 
+        intervals: size = 20 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.09861351136781177 
+            text = "" 
+        intervals [2]:
+            xmin = 0.09861351136781177 
+            xmax = 0.30328620814260565 
+            text = "while" 
+        intervals [3]:
+            xmin = 0.30328620814260565 
+            xmax = 0.435073939730259 
+            text = "they" 
+        intervals [4]:
+            xmin = 0.435073939730259 
+            xmax = 0.7750729397302578 
+            text = "don't" 
+        intervals [5]:
+            xmin = 0.7750729397302578 
+            xmax = 0.9950739397302577 
+            text = "say" 
+        intervals [6]:
+            xmin = 0.9950739397302577 
+            xmax = 1.7327490026478336 
+            text = "breathalizers" 
+        intervals [7]:
+            xmin = 1.7327490026478336 
+            xmax = 1.8539279522605216 
+            text = "are" 
+        intervals [8]:
+            xmin = 1.8539279522605216 
+            xmax = 2.120970452332927 
+            text = "one" 
+        intervals [9]:
+            xmin = 2.120970452332927 
+            xmax = 2.4850739397302597 
+            text = "hundred" 
+        intervals [10]:
+            xmin = 2.4850739397302597 
+            xmax = 2.9750729397302607 
+            text = "percent" 
+        intervals [11]:
+            xmin = 2.9750729397302607 
+            xmax = 3.3550739397302607 
+            text = "accurate" 
+        intervals [12]:
+            xmin = 3.3550739397302607 
+            xmax = 3.658568171092661 
+            text = "" 
+        intervals [13]:
+            xmin = 3.658568171092661 
+            xmax = 3.8350739397302576 
+            text = "they" 
+        intervals [14]:
+            xmin = 3.8350739397302576 
+            xmax = 4.100646931716727 
+            text = "do" 
+        intervals [15]:
+            xmin = 4.100646931716727 
+            xmax = 4.374866224192769 
+            text = "say" 
+        intervals [16]:
+            xmin = 4.374866224192769 
+            xmax = 4.475072939730261 
+            text = "they" 
+        intervals [17]:
+            xmin = 4.475072939730261 
+            xmax = 4.547658430121972 
+            text = "are" 
+        intervals [18]:
+            xmin = 4.547658430121972 
+            xmax = 5.2050729397302575 
+            text = "extremely" 
+        intervals [19]:
+            xmin = 5.2050729397302575 
+            xmax = 5.788218744500766 
+            text = "reliable" 
+        intervals [20]:
+            xmin = 5.788218744500766 
+            xmax = 6.0314375 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Phones" 
+        xmin = 0 
+        xmax = 6.0314375 
+        intervals: size = 71 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.09861351136781177 
+            text = "" 
+        intervals [2]:
+            xmin = 0.09861351136781177 
+            xmax = 0.18883942239728907 
+            text = "w" 
+        intervals [3]:
+            xmin = 0.18883942239728907 
+            xmax = 0.25840511569346186 
+            text = "a\ic" 
+        intervals [4]:
+            xmin = 0.25840511569346186 
+            xmax = 0.30328620814260565 
+            text = "l" 
+        intervals [5]:
+            xmin = 0.30328620814260565 
+            xmax = 0.343679191346835 
+            text = "\dh" 
+        intervals [6]:
+            xmin = 0.343679191346835 
+            xmax = 0.435073939730259 
+            text = "e" 
+        intervals [7]:
+            xmin = 0.435073939730259 
+            xmax = 0.5389119435006102 
+            text = "d" 
+        intervals [8]:
+            xmin = 0.5389119435006102 
+            xmax = 0.6309181830213549 
+            text = "o" 
+        intervals [9]:
+            xmin = 0.6309181830213549 
+            xmax = 0.7184363132971853 
+            text = "n" 
+        intervals [10]:
+            xmin = 0.7184363132971853 
+            xmax = 0.7750729397302578 
+            text = "\?g" 
+        intervals [11]:
+            xmin = 0.7750729397302578 
+            xmax = 0.8665439183793595 
+            text = "s" 
+        intervals [12]:
+            xmin = 0.8665439183793595 
+            xmax = 0.9950739397302577 
+            text = "e" 
+        intervals [13]:
+            xmin = 0.9950739397302577 
+            xmax = 1.09768154449245 
+            text = "b" 
+        intervals [14]:
+            xmin = 1.09768154449245 
+            xmax = 1.1313423638293076 
+            text = "\rt" 
+        intervals [15]:
+            xmin = 1.1313423638293076 
+            xmax = 1.1807115655233655 
+            text = "\ep" 
+        intervals [16]:
+            xmin = 1.1807115655233655 
+            xmax = 1.259253477309367 
+            text = "\tf" 
+        intervals [17]:
+            xmin = 1.259253477309367 
+            xmax = 1.3131107882483397 
+            text = "\sw" 
+        intervals [18]:
+            xmin = 1.3131107882483397 
+            xmax = 1.353503771452569 
+            text = "l" 
+        intervals [19]:
+            xmin = 1.353503771452569 
+            xmax = 1.5173197588919436 
+            text = "a\ic" 
+        intervals [20]:
+            xmin = 1.5173197588919436 
+            xmax = 1.5958616706779452 
+            text = "z" 
+        intervals [21]:
+            xmin = 1.5958616706779452 
+            xmax = 1.6429868177495461 
+            text = "\sw" 
+        intervals [22]:
+            xmin = 1.6429868177495461 
+            xmax = 1.7327490026478336 
+            text = "z" 
+        intervals [23]:
+            xmin = 1.7327490026478336 
+            xmax = 1.8539279522605216 
+            text = "a\hr" 
+        intervals [24]:
+            xmin = 1.8539279522605216 
+            xmax = 1.977350956495667 
+            text = "w" 
+        intervals [25]:
+            xmin = 1.977350956495667 
+            xmax = 2.0424285405469256 
+            text = "\vt" 
+        intervals [26]:
+            xmin = 2.0424285405469256 
+            xmax = 2.120970452332927 
+            text = "n" 
+        intervals [27]:
+            xmin = 2.120970452332927 
+            xmax = 2.2107326372312146 
+            text = "h" 
+        intervals [28]:
+            xmin = 2.2107326372312146 
+            xmax = 2.3049829313744166 
+            text = "\vt" 
+        intervals [29]:
+            xmin = 2.3049829313744166 
+            xmax = 2.3543521330684745 
+            text = "n" 
+        intervals [30]:
+            xmin = 2.3543521330684745 
+            xmax = 2.3902570070277895 
+            text = "d" 
+        intervals [31]:
+            xmin = 2.3902570070277895 
+            xmax = 2.4530905364565907 
+            text = "\sw\hr" 
+        intervals [32]:
+            xmin = 2.4530905364565907 
+            xmax = 2.4850739397302597 
+            text = "d" 
+        intervals [33]:
+            xmin = 2.4850739397302597 
+            xmax = 2.601618443915326 
+            text = "p" 
+        intervals [34]:
+            xmin = 2.601618443915326 
+            xmax = 2.6509876456093844 
+            text = "\sw" 
+        intervals [35]:
+            xmin = 2.6509876456093844 
+            xmax = 2.7721665952220724 
+            text = "s" 
+        intervals [36]:
+            xmin = 2.7721665952220724 
+            xmax = 2.8462203977631595 
+            text = "\ep" 
+        intervals [37]:
+            xmin = 2.8462203977631595 
+            xmax = 2.884369326344932 
+            text = "n" 
+        intervals [38]:
+            xmin = 2.884369326344932 
+            xmax = 2.9750729397302607 
+            text = "t" 
+        intervals [39]:
+            xmin = 2.9750729397302607 
+            xmax = 3.1199950617029364 
+            text = "\ae" 
+        intervals [40]:
+            xmin = 3.1199950617029364 
+            xmax = 3.2187334650910526 
+            text = "k" 
+        intervals [41]:
+            xmin = 3.2187334650910526 
+            xmax = 3.2613705029177393 
+            text = "j" 
+        intervals [42]:
+            xmin = 3.2613705029177393 
+            xmax = 3.3017634861219687 
+            text = "\sw\hr" 
+        intervals [43]:
+            xmin = 3.3017634861219687 
+            xmax = 3.3550739397302607 
+            text = "t" 
+        intervals [44]:
+            xmin = 3.3550739397302607 
+            xmax = 3.658568171092661 
+            text = "" 
+        intervals [45]:
+            xmin = 3.658568171092661 
+            xmax = 3.7236457551439197 
+            text = "\dh" 
+        intervals [46]:
+            xmin = 3.7236457551439197 
+            xmax = 3.8350739397302576 
+            text = "e" 
+        intervals [47]:
+            xmin = 3.8350739397302576 
+            xmax = 3.97049176361421 
+            text = "d" 
+        intervals [48]:
+            xmin = 3.97049176361421 
+            xmax = 4.100646931716727 
+            text = "u" 
+        intervals [49]:
+            xmin = 4.100646931716727 
+            xmax = 4.242467001467795 
+            text = "s" 
+        intervals [50]:
+            xmin = 4.242467001467795 
+            xmax = 4.374866224192769 
+            text = "e" 
+        intervals [51]:
+            xmin = 4.374866224192769 
+            xmax = 4.417503262019456 
+            text = "\dh" 
+        intervals [52]:
+            xmin = 4.417503262019456 
+            xmax = 4.475072939730261 
+            text = "e" 
+        intervals [53]:
+            xmin = 4.475072939730261 
+            xmax = 4.520729774652486 
+            text = "a" 
+        intervals [54]:
+            xmin = 4.520729774652486 
+            xmax = 4.547658430121972 
+            text = "\rt" 
+        intervals [55]:
+            xmin = 4.547658430121972 
+            xmax = 4.58131924945883 
+            text = "\ep" 
+        intervals [56]:
+            xmin = 4.58131924945883 
+            xmax = 4.664349270489746 
+            text = "k" 
+        intervals [57]:
+            xmin = 4.664349270489746 
+            xmax = 4.767575783122777 
+            text = "s" 
+        intervals [58]:
+            xmin = 4.767575783122777 
+            xmax = 4.848361749531236 
+            text = "t" 
+        intervals [59]:
+            xmin = 4.848361749531236 
+            xmax = 4.888754732735465 
+            text = "\rt" 
+        intervals [60]:
+            xmin = 4.888754732735465 
+            xmax = 4.94036798905198 
+            text = "i" 
+        intervals [61]:
+            xmin = 4.94036798905198 
+            xmax = 5.005445573103239 
+            text = "m" 
+        intervals [62]:
+            xmin = 5.005445573103239 
+            xmax = 5.088475594134155 
+            text = "l" 
+        intervals [63]:
+            xmin = 5.088475594134155 
+            xmax = 5.2050729397302575 
+            text = "i" 
+        intervals [64]:
+            xmin = 5.2050729397302575 
+            xmax = 5.268352933251643 
+            text = "\rt" 
+        intervals [65]:
+            xmin = 5.268352933251643 
+            xmax = 5.312105695318163 
+            text = "i" 
+        intervals [66]:
+            xmin = 5.312105695318163 
+            xmax = 5.377464759639755 
+            text = "l" 
+        intervals [67]:
+            xmin = 5.377464759639755 
+            xmax = 5.556256910800473 
+            text = "a\ic" 
+        intervals [68]:
+            xmin = 5.556256910800473 
+            xmax = 5.61567424200192 
+            text = "\sw" 
+        intervals [69]:
+            xmin = 5.61567424200192 
+            xmax = 5.658886846512063 
+            text = "b" 
+        intervals [70]:
+            xmin = 5.658886846512063 
+            xmax = 5.788218744500766 
+            text = "l\|v" 
+        intervals [71]:
+            xmin = 5.788218744500766 
+            xmax = 6.0314375 
+            text = "" 
+    item [3]:
+        class = "TextTier" 
+        name = "PrStr" 
+        xmin = 0 
+        xmax = 6.0314375 
+        points: size = 14 
+        points [1]:
+            number = 0.22362226904537547 
+            mark = "?*" 
+        points [2]:
+            number = 0.5849150632609825 
+            mark = "*" 
+        points [3]:
+            number = 0.9950739397302577 
+            mark = "]" 
+        points [4]:
+            number = 1.1560269646763366 
+            mark = "*" 
+        points [5]:
+            number = 1.7327490026478336 
+            mark = "?]" 
+        points [6]:
+            number = 2.0098897485212963 
+            mark = "*" 
+        points [7]:
+            number = 2.2578577843028156 
+            mark = "*" 
+        points [8]:
+            number = 3.0475340007165985 
+            mark = "?*" 
+        points [9]:
+            number = 3.3550739397302607 
+            mark = "]" 
+        points [10]:
+            number = 4.035569347665469 
+            mark = "*" 
+        points [11]:
+            number = 4.374866224192769 
+            mark = "]" 
+        points [12]:
+            number = 4.914561360893723 
+            mark = "*" 
+        points [13]:
+            number = 5.466860835220114 
+            mark = "*" 
+        points [14]:
+            number = 5.788218744500766 
+            mark = "]" 
+    item [4]:
+        class = "TextTier" 
+        name = "Points" 
+        xmin = 0 
+        xmax = 6.0314375 
+        points: size = 24 
+        points [1]:
+            number = 0.25566759111018333 
+            mark = "0" 
+        points [2]:
+            number = 0.4733053991792779 
+            mark = "0" 
+        points [3]:
+            number = 0.7049660044059258 
+            mark = "0" 
+        points [4]:
+            number = 0.9416998121975466 
+            mark = "0" 
+        points [5]:
+            number = 1.1025625399007903 
+            mark = "0" 
+        points [6]:
+            number = 1.4006317118215068 
+            mark = "0" 
+        points [7]:
+            number = 1.9116074351141636 
+            mark = "0" 
+        points [8]:
+            number = 1.9494574886913976 
+            mark = "0" 
+        points [9]:
+            number = 2.0535451360287906 
+            mark = "0" 
+        points [10]:
+            number = 2.2333328905206513 
+            mark = "0" 
+        points [11]:
+            number = 2.34709916455979 
+            mark = "0" 
+        points [12]:
+            number = 2.621295939687298 
+            mark = "0,95" 
+        points [13]:
+            number = 3.0991528660998755 
+            mark = "0" 
+        points [14]:
+            number = 3.297865647380353 
+            mark = "0" 
+        points [15]:
+            number = 3.7804538304900843 
+            mark = "0" 
+        points [16]:
+            number = 3.975058048814325 
+            mark = "0" 
+        points [17]:
+            number = 4.102924792403704 
+            mark = "0" 
+        points [18]:
+            number = 4.30089206717705 
+            mark = "0" 
+        points [19]:
+            number = 4.485411078366065 
+            mark = "0" 
+        points [20]:
+            number = 4.565842442217686 
+            mark = "0" 
+        points [21]:
+            number = 4.92871528839918 
+            mark = "0" 
+        points [22]:
+            number = 5.460049957979836 
+            mark = "0" 
+        points [23]:
+            number = 5.541009490615038 
+            mark = "0" 
+        points [24]:
+            number = 5.720269076323318 
+            mark = "0,85" 
+    item [5]:
+        class = "TextTier" 
+        name = "Levels" 
+        xmin = 0 
+        xmax = 6.0314375 
+        points: size = 24 
+        points [1]:
+            number = 0.25566759111018333 
+            mark = "1" 
+        points [2]:
+            number = 0.4733053991792779 
+            mark = "2" 
+        points [3]:
+            number = 0.7049660044059258 
+            mark = "5" 
+        points [4]:
+            number = 0.9416998121975466 
+            mark = "1" 
+        points [5]:
+            number = 1.1025625399007903 
+            mark = "5" 
+        points [6]:
+            number = 1.4006317118215068 
+            mark = "4" 
+        points [7]:
+            number = 1.9116074351141636 
+            mark = "3" 
+        points [8]:
+            number = 1.9494574886913976 
+            mark = "4" 
+        points [9]:
+            number = 2.0535451360287906 
+            mark = "4" 
+        points [10]:
+            number = 2.2333328905206513 
+            mark = "2" 
+        points [11]:
+            number = 2.34709916455979 
+            mark = "5" 
+        points [12]:
+            number = 2.621295939687298 
+            mark = "1" 
+        points [13]:
+            number = 3.0991528660998755 
+            mark = "1" 
+        points [14]:
+            number = 3.297865647380353 
+            mark = "2" 
+        points [15]:
+            number = 3.7804538304900843 
+            mark = "3" 
+        points [16]:
+            number = 3.975058048814325 
+            mark = "3" 
+        points [17]:
+            number = 4.102924792403704 
+            mark = "5" 
+        points [18]:
+            number = 4.30089206717705 
+            mark = "1" 
+        points [19]:
+            number = 4.485411078366065 
+            mark = "3" 
+        points [20]:
+            number = 4.565842442217686 
+            mark = "3" 
+        points [21]:
+            number = 4.92871528839918 
+            mark = "5" 
+        points [22]:
+            number = 5.460049957979836 
+            mark = "4" 
+        points [23]:
+            number = 5.541009490615038 
+            mark = "5" 
+        points [24]:
+            number = 5.720269076323318 
+            mark = "1" 
+    item [6]:
+        class = "IntervalTier" 
+        name = "Ranges" 
+        xmin = 0 
+        xmax = 6.0314375 
+        intervals: size = 2 
+        intervals [1]:
+            xmin = 0 
+            xmax = 3.5107721987522935 
+            text = "75-210" 
+        intervals [2]:
+            xmin = 3.5107721987522935 
+            xmax = 6.0314375 
+            text = "80-285" 
+    item [7]:
+        class = "TextTier" 
+        name = "misc" 
+        xmin = 0 
+        xmax = 6.0314375 
+        points: size = 2 
+        points [1]:
+            number = 3.297865647380353 
+            mark = "if this range for ""hundred..accurate"" were split into 2, 1 for ""hundred"" and 1 for the rest, the second range would match the range of ""are one""; and the final Point would have a Levels value of 5..." 
+        points [2]:
+            number = 3.8835753766459598 
+            mark = "this valley might be artificially too low, due to the /d/, so the Point is aligned in the onset of the vowel /u/" 

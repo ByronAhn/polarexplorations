@@ -1,0 +1,219 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 2.035530263771158 
+tiers? <exists> 
+size = 7 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "words" 
+        xmin = 0 
+        xmax = 2.035530263771158 
+        intervals: size = 6 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.06873160894190596 
+            text = "" 
+        intervals [2]:
+            xmin = 0.06873160894190596 
+            xmax = 0.5022604865305236 
+            text = "sENgEe" 
+        intervals [3]:
+            xmin = 0.5022604865305236 
+            xmax = 0.9986196362334335 
+            text = "chuRmahaN" 
+        intervals [4]:
+            xmin = 0.9986196362334335 
+            xmax = 1.4038748913706196 
+            text = "sENbeU" 
+        intervals [5]:
+            xmin = 1.4038748913706196 
+            xmax = 1.9850549084278242 
+            text = "chiNguNIN" 
+        intervals [6]:
+            xmin = 1.9850549084278242 
+            xmax = 2.035530263771158 
+            text = "" 
+    item [2]:
+        class = "TextTier" 
+        name = "tones" 
+        xmin = 0 
+        xmax = 2.035530263771158 
+        points: size = 10 
+        points [1]:
+            number = 0.19125063956477617 
+            mark = "H" 
+        points [2]:
+            number = 0.4834114048962359 
+            mark = "Ha" 
+        points [3]:
+            number = 0.6871172534463369 
+            mark = "H" 
+        points [4]:
+            number = 0.8603930375819903 
+            mark = "L+" 
+        points [5]:
+            number = 0.9766290409934312 
+            mark = "Ha-ip" 
+        points [6]:
+            number = 1.1368462348848767 
+            mark = "H" 
+        points [7]:
+            number = 1.3881673233420464 
+            mark = "Ha" 
+        points [8]:
+            number = 1.5703751124734944 
+            mark = "H" 
+        points [9]:
+            number = 1.7086017111249376 
+            mark = "L+" 
+        points [10]:
+            number = 1.9850549084278242 
+            mark = "HL%" 
+    item [3]:
+        class = "TextTier" 
+        name = "PrStr" 
+        xmin = 0 
+        xmax = 2.035530263771158 
+        points: size = 4 
+        points [1]:
+            number = 0.5022604865305236 
+            mark = "]#AP" 
+        points [2]:
+            number = 0.9986196362334335 
+            mark = "]#ip" 
+        points [3]:
+            number = 1.4038748913706196 
+            mark = "]#AP" 
+        points [4]:
+            number = 1.9850549084278242 
+            mark = "]#IP" 
+    item [4]:
+        class = "TextTier" 
+        name = "Points" 
+        xmin = 0 
+        xmax = 2.035530263771158 
+        points: size = 14 
+        points [1]:
+            number = 0.19125063956477617 
+            mark = "AP<" 
+        points [2]:
+            number = 0.4834114048962359 
+            mark = "AP>" 
+        points [3]:
+            number = 0.6871172534463369 
+            mark = "AP<" 
+        points [4]:
+            number = 0.779240950355087 
+            mark = "0" 
+        points [5]:
+            number = 0.8603930375819903 
+            mark = "AP>" 
+        points [6]:
+            number = 0.9689604722640661 
+            mark = "AP>" 
+        points [7]:
+            number = 1.1368462348848767 
+            mark = "AP<" 
+        points [8]:
+            number = 1.3881673233420464 
+            mark = "AP>" 
+        points [9]:
+            number = 1.5518668294336833 
+            mark = "AP<" 
+        points [10]:
+            number = 1.599984099483062 
+            mark = "0" 
+        points [11]:
+            number = 1.7086017111249376 
+            mark = "AP>" 
+        points [12]:
+            number = 1.8007637696675807 
+            mark = "IP>" 
+        points [13]:
+            number = 1.8996859529334784 
+            mark = "IP>" 
+        points [14]:
+            number = 1.9450536646943213 
+            mark = "IP>" 
+    item [5]:
+        class = "TextTier" 
+        name = "Levels" 
+        xmin = 0 
+        xmax = 2.035530263771158 
+        points: size = 14 
+        points [1]:
+            number = 0.19125063956477617 
+            mark = "5" 
+        points [2]:
+            number = 0.4834114048962359 
+            mark = "5" 
+        points [3]:
+            number = 0.6871172534463369 
+            mark = "5" 
+        points [4]:
+            number = 0.779240950355087 
+            mark = "1" 
+        points [5]:
+            number = 0.8603930375819903 
+            mark = "1" 
+        points [6]:
+            number = 0.9689604722640661 
+            mark = "3" 
+        points [7]:
+            number = 1.1368462348848767 
+            mark = "5" 
+        points [8]:
+            number = 1.3881673233420464 
+            mark = "5" 
+        points [9]:
+            number = 1.5518668294336833 
+            mark = "5" 
+        points [10]:
+            number = 1.599984099483062 
+            mark = "4" 
+        points [11]:
+            number = 1.7086017111249376 
+            mark = "3" 
+        points [12]:
+            number = 1.8007637696675807 
+            mark = "5" 
+        points [13]:
+            number = 1.8996859529334784 
+            mark = "1" 
+        points [14]:
+            number = 1.9450536646943213 
+            mark = "1" 
+    item [6]:
+        class = "IntervalTier" 
+        name = "Ranges" 
+        xmin = 0 
+        xmax = 2.035530263771158 
+        intervals: size = 4 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.5022604865305236 
+            text = "175-220" 
+        intervals [2]:
+            xmin = 0.5022604865305236 
+            xmax = 0.9986196362334335 
+            text = "175-220(210)" 
+        intervals [3]:
+            xmin = 0.9986196362334335 
+            xmax = 1.4038748913706196 
+            text = "100-220" 
+        intervals [4]:
+            xmin = 1.4038748913706196 
+            xmax = 2.035530263771158 
+            text = "100-220(185)" 
+    item [7]:
+        class = "TextTier" 
+        name = "misc" 
+        xmin = 0 
+        xmax = 2.035530263771158 
+        points: size = 1 
+        points [1]:
+            number = 0.9986196362334335 
+            mark = "]#ip = blocked downstep without ]#IP cues" 

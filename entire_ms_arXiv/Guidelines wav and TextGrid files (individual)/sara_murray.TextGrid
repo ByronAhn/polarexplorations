@@ -1,0 +1,183 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 1.677465547022463 
+tiers? <exists> 
+size = 8 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "Words" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        intervals: size = 5 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.12054171071791205 
+            text = "" 
+        intervals [2]:
+            xmin = 0.12054171071791205 
+            xmax = 0.6136946225015357 
+            text = "Sara" 
+        intervals [3]:
+            xmin = 0.6136946225015357 
+            xmax = 1.0578293231741365 
+            text = "Murray" 
+        intervals [4]:
+            xmin = 1.0578293231741365 
+            xmax = 1.4068984022980868 
+            text = "did" 
+        intervals [5]:
+            xmin = 1.4068984022980868 
+            xmax = 1.677465547022463 
+            text = "" 
+    item [2]:
+        class = "IntervalTier" 
+        name = "Phones" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        intervals: size = 13 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.12054171071791205 
+            text = "" 
+        intervals [2]:
+            xmin = 0.12054171071791205 
+            xmax = 0.29581895044823614 
+            text = "s" 
+        intervals [3]:
+            xmin = 0.29581895044823614 
+            xmax = 0.40870937603725843 
+            text = "e" 
+        intervals [4]:
+            xmin = 0.40870937603725843 
+            xmax = 0.533483004319862 
+            text = "\rt" 
+        intervals [5]:
+            xmin = 0.533483004319862 
+            xmax = 0.6136946225015357 
+            text = "\sw" 
+        intervals [6]:
+            xmin = 0.6136946225015357 
+            xmax = 0.735497450110744 
+            text = "m" 
+        intervals [7]:
+            xmin = 0.735497450110744 
+            xmax = 0.8231360699759059 
+            text = "\er\hr" 
+        intervals [8]:
+            xmin = 0.8231360699759059 
+            xmax = 0.9389972962383235 
+            text = "\rt" 
+        intervals [9]:
+            xmin = 0.9389972962383235 
+            xmax = 1.0578293231741365 
+            text = "i" 
+        intervals [10]:
+            xmin = 1.0578293231741365 
+            xmax = 1.1528949447227868 
+            text = "d" 
+        intervals [11]:
+            xmin = 1.1528949447227868 
+            xmax = 1.3370845864732968 
+            text = "\ic" 
+        intervals [12]:
+            xmin = 1.3370845864732968 
+            xmax = 1.4068984022980868 
+            text = "d" 
+        intervals [13]:
+            xmin = 1.4068984022980868 
+            xmax = 1.677465547022463 
+            text = "" 
+    item [3]:
+        class = "TextTier" 
+        name = "ToBI Tones" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        points: size = 3 
+        points [1]:
+            number = 0.42847330976297465 
+            mark = "L*+H –or– L*" 
+        points [2]:
+            number = 0.779316760043325 
+            mark = "H+!H* –or– !H*" 
+        points [3]:
+            number = 1.4068984022980868 
+            mark = "L-L%" 
+    item [4]:
+        class = "TextTier" 
+        name = "PrStr" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        points: size = 3 
+        points [1]:
+            number = 0.3522641632427473 
+            mark = "*" 
+        points [2]:
+            number = 0.779316760043325 
+            mark = "*" 
+        points [3]:
+            number = 1.4068984022980868 
+            mark = "]" 
+    item [5]:
+        class = "TextTier" 
+        name = "Points" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        points: size = 5 
+        points [1]:
+            number = 0.32998315819228236 
+            mark = "*>" 
+        points [2]:
+            number = 0.47555239118865317 
+            mark = "*<" 
+        points [3]:
+            number = 0.6438949202886388 
+            mark = "*</*>" 
+        points [4]:
+            number = 1.020694314756695 
+            mark = "]>" 
+        points [5]:
+            number = 1.3177743820962273 
+            mark = "]>" 
+    item [6]:
+        class = "TextTier" 
+        name = "Levels" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        points: size = 5 
+        points [1]:
+            number = 0.32998315819228236 
+            mark = "1" 
+        points [2]:
+            number = 0.47555239118865317 
+            mark = "1" 
+        points [3]:
+            number = 0.6438949202886388 
+            mark = "5" 
+        points [4]:
+            number = 1.020694314756695 
+            mark = "1" 
+        points [5]:
+            number = 1.3177743820962273 
+            mark = "1" 
+    item [7]:
+        class = "IntervalTier" 
+        name = "Ranges" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        intervals: size = 1 
+        intervals [1]:
+            xmin = 0 
+            xmax = 1.677465547022463 
+            text = "90-230" 
+    item [8]:
+        class = "TextTier" 
+        name = "misc" 
+        xmin = 0 
+        xmax = 1.677465547022463 
+        points: size = 1 
+        points [1]:
+            number = 0.8387327735112315 
+            mark = "ToBI would force choices in the two pitch accents; the 3 legal ToBI combinations would predict the same f0 contour" 
